@@ -1,9 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 
+
+import ConsultationModal from '@/components/ConsultationModal';
+
 const Hero: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center font-sans font-medium">
       {/* Background Video */}
@@ -34,15 +39,14 @@ const Hero: React.FC = () => {
             variant="default"
             size="lg"
             className="bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 text-base font-semibold shadow-lg"
-            onClick={() => {
-              // TODO: Implement modal functionality
-              console.log("Open consultation modal");
-            }}
+            onClick={() => setIsModalOpen(true)}
           >
             GET A FREE CONSULTATION
           </Button>
         </div>
       </div>
+
+      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

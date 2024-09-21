@@ -5,7 +5,7 @@ import React from "react";
 
 const firaSans = Fira_Sans({
   subsets: ['latin'],
-  weight: ['400', '500'], // We'll use 400 (normal) and 500 (medium)
+  weight: ['400', '500'],
   variable: '--font-fira-sans',
 });
 

@@ -18,7 +18,6 @@ interface AuthDialogProps {
   className?: string;
 }
 
-// Top countries with their phone codes and templates
 const topCountries = [
   { code: 'US', name: 'United States', phoneCode: '+1', template: '(###) ###-####' },
   { code: 'GB', name: 'United Kingdom', phoneCode: '+44', template: '#### ######' },
@@ -51,14 +50,14 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
       setActiveDialog((prev) => prev === 'signin' ? 'signup' : 'signin');
       setKey(prevKey => prevKey + 1);
       setIsOpen(true);
-    }, 150); // Reduced from 300ms to 150ms for faster transition
+    }, 150);
   };
 
   const handleCountryChange = (value: string) => {
     const country = topCountries.find(c => c.code === value);
     if (country) {
       setSelectedCountry(country);
-      setPhoneNumber(''); // Reset phone number when country changes
+      setPhoneNumber('');
     }
   };
 
@@ -82,9 +81,7 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
   };
 
   const isValidPhoneNumber = (phone: string) => {
-    // Remove non-digit characters for validation
     const digitsOnly = phone.replace(/\D/g, '');
-    // Check if the number of digits matches the template
     return digitsOnly.length === selectedCountry.template.replace(/\D/g, '').length;
   };
 
