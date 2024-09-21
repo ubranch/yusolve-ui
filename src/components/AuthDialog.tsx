@@ -45,10 +45,6 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
     setIsOpen(true);
   };
 
-  const closeDialog = () => {
-    setIsOpen(false);
-  };
-
   const switchDialog = () => {
     setIsOpen(false);
     setTimeout(() => {
