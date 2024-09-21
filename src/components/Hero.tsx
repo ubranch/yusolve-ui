@@ -20,6 +20,7 @@ const Hero: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/videos/hero-video.mp4" type="video/mp4" />
+        <source src="/videos/hero-video.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
 
