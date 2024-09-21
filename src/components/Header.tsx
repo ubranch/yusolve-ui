@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from 'lucide-react';
-import { Button } from "@/components/ui/button";
+import { AuthDialog } from '@/components/AuthDialog';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -126,21 +126,9 @@ const Header: React.FC = () => {
             )}>Blog</Link>
           </nav>
 
-          {/* Sign In Button */}
+          {/* Sign In Button for desktop */}
           <div className="hidden lg:block">
-            <Button
-              asChild
-              variant={isScrolled ? "default" : "outline"}
-              size="default"
-              className={cn(
-                "transition duration-300",
-                isScrolled
-                  ? "bg-[#18344a] text-white hover:bg-[#224b6b]"
-                  : "border-white/30 text-white hover:bg-white/20"
-              )}
-            >
-              <Link href="/sign-in">Sign In</Link>
-            </Button>
+            <AuthDialog isScrolled={isScrolled} buttonType="signin" />
           </div>
 
           {/* Mobile menu button */}
@@ -214,14 +202,12 @@ const Header: React.FC = () => {
           <Link href="/about-us" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">About Us</Link>
           <Link href="/contact-us" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">Contact Us</Link>
           <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">Blog</Link>
-          <Button
-            asChild
-            variant="outline"
-            size="default"
-            className="w-full justify-start bg-white/10 text-white hover:bg-white/20 rounded-md text-base"
-          >
-            <Link href="/sign-in">Sign In</Link>
-          </Button>
+
+          {/* Auth buttons container */}
+          <div className="flex justify-around items-center mt-4 px-3 py-2">
+            <AuthDialog isScrolled={isScrolled} buttonType="signin" className="flex-1 mr-2" />
+            <AuthDialog isScrolled={isScrolled} buttonType="signup" className="flex-1 ml-2" />
+          </div>
         </div>
       </div>
     </header>

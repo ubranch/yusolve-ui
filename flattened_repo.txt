@@ -23,6 +23,24 @@
 
 </components.json>
 
+<next.config.js>
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/webp'],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+}
+
+module.exports = nextConfig
+
+</next.config.js>
+
 <package.json>
 {
   "name": "yusolve-ui",
@@ -35,9 +53,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.445.0",
@@ -72,15 +94,27 @@ importers:
 
   .:
     dependencies:
+      '@radix-ui/react-dialog':
+        specifier: ^1.1.1
+        version: 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-icons':
         specifier: ^1.3.0
         version: 1.3.0(react@18.3.1)
+      '@radix-ui/react-label':
+        specifier: ^2.1.0
+        version: 2.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-select':
+        specifier: ^2.1.1
+        version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-tabs':
+        specifier: ^1.1.0
+        version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -285,6 +319,9 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
+  '@radix-ui/number@1.1.0':
+    resolution: {integrity: sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ==}
+
   '@radix-ui/primitive@1.1.0':
     resolution: {integrity: sha512-4Z8dn6Upk0qk4P74xBhZ6Hd/w0mPEzOOLxy4xiPXOXqjF7jZS0VAKk7/x/H6FyY2zCkYJqePf1G5KmkmNJ4RBA==}
 
@@ -330,6 +367,19 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-dialog@1.1.1':
+    resolution: {integrity: sha512-zysS+iU4YP3STKNS6USvFVqI4qqx8EpiwmT5TuCApVEBca+eRCbONi4EgzfNSuVnOXvC5UPHHMjs8RXO6DH9Bg==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/react-direction@1.1.0':
@@ -401,6 +451,19 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-label@2.1.0':
+    resolution: {integrity: sha512-peLblDlFw/ngk3UWq0VnYaOLy6agTZZ+MUO/WhVfm14vJGML+xH4FAl2XQGLqdefjNb7ApRg6Yn7U42ZhmYXdw==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/react-menu@2.1.1':
@@ -481,6 +544,19 @@ packages:
       '@types/react-dom':
         optional: true
 
+  '@radix-ui/react-select@2.1.1':
+    resolution: {integrity: sha512-8iRDfyLtzxlprOo9IicnzvpsO1wNCkuwzzCM+Z5Rb5tNOpCdMvcc2AkzX0Fz+Tz9v6NJ5B/7EEgyZveo4FBRfQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   '@radix-ui/react-slot@1.1.0':
     resolution: {integrity: sha512-FUCf5XMfmW4dtYl69pdS4DbxKy8nj4M7SafBgPllysxmdachynNflAdp/gCsnYWNDnge6tI9onzMp5ARYc1KNw==}
     peerDependencies:
@@ -488,6 +564,19 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-tabs@1.1.0':
+    resolution: {integrity: sha512-bZgOKB/LtZIij75FSuPzyEti/XBhJH52ExgtdVqjCIh+Nx/FW+LhnbXtbCzIi34ccyMsyOja8T0thCzoHFXNKA==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/react-use-callback-ref@1.1.0':
@@ -526,6 +615,15 @@ packages:
       '@types/react':
         optional: true
 
+  '@radix-ui/react-use-previous@1.1.0':
+    resolution: {integrity: sha512-Z/e78qg2YFnnXcW88A4JmTtm4ADckLno6F7OXotmkQfeuCVaKuYzqAATPhVzl3delXE7CxIV8shofPn3jPc5Og==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
   '@radix-ui/react-use-rect@1.1.0':
     resolution: {integrity: sha512-0Fmkebhr6PiseyZlYAOtLS+nb7jLmpqTrJyv61Pe68MKYW6OWdRE2kI70TaYY27u7H0lajqM3hSMMLFq18Z7nQ==}
     peerDependencies:
@@ -542,6 +640,19 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-visually-hidden@1.1.0':
+    resolution: {integrity: sha512-N8MDZqtgCgG5S3aV60INAB475osJousYpZ4cTJ2cFbMpdHS5Y6loLTH8LPtkj2QN0x93J30HT/M3qJXM0+lyeQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/rect@1.1.0':
@@ -2116,6 +2227,8 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
+  '@radix-ui/number@1.1.0': {}
+
   '@radix-ui/primitive@1.1.0': {}
 
   '@radix-ui/react-arrow@1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
@@ -2150,6 +2263,28 @@ snapshots:
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.8
+
+  '@radix-ui/react-dialog@1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.0
+      '@radix-ui/react-compose-refs': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-context': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-dismissable-layer': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-focus-guards': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-focus-scope': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-id': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-portal': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-presence': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-primitive': 2.0.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-slot': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      aria-hidden: 1.2.4
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-remove-scroll: 2.5.7(@types/react@18.3.8)(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.8
+      '@types/react-dom': 18.3.0
 
   '@radix-ui/react-direction@1.1.0(@types/react@18.3.8)(react@18.3.1)':
     dependencies:
@@ -2212,6 +2347,15 @@ snapshots:
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.8
+
+  '@radix-ui/react-label@2.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@radix-ui/react-primitive': 2.0.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.8
+      '@types/react-dom': 18.3.0
 
   '@radix-ui/react-menu@2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -2303,12 +2447,57 @@ snapshots:
       '@types/react': 18.3.8
       '@types/react-dom': 18.3.0
 
+  '@radix-ui/react-select@2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@radix-ui/number': 1.1.0
+      '@radix-ui/primitive': 1.1.0
+      '@radix-ui/react-collection': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-compose-refs': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-context': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-direction': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-dismissable-layer': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-focus-guards': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-focus-scope': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-id': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-popper': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-portal': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-primitive': 2.0.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-slot': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-use-previous': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-visually-hidden': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      aria-hidden: 1.2.4
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-remove-scroll: 2.5.7(@types/react@18.3.8)(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.8
+      '@types/react-dom': 18.3.0
+
   '@radix-ui/react-slot@1.1.0(@types/react@18.3.8)(react@18.3.1)':
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.0(@types/react@18.3.8)(react@18.3.1)
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.8
+
+  '@radix-ui/react-tabs@1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.0
+      '@radix-ui/react-context': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-direction': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-id': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@radix-ui/react-presence': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-primitive': 2.0.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-roving-focus': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.8
+      '@types/react-dom': 18.3.0
 
   '@radix-ui/react-use-callback-ref@1.1.0(@types/react@18.3.8)(react@18.3.1)':
     dependencies:
@@ -2336,6 +2525,12 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.8
 
+  '@radix-ui/react-use-previous@1.1.0(@types/react@18.3.8)(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 18.3.8
+
   '@radix-ui/react-use-rect@1.1.0(@types/react@18.3.8)(react@18.3.1)':
     dependencies:
       '@radix-ui/rect': 1.1.0
@@ -2349,6 +2544,15 @@ snapshots:
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.8
+
+  '@radix-ui/react-visually-hidden@1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@radix-ui/react-primitive': 2.0.0(@types/react-dom@18.3.0)(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.8
+      '@types/react-dom': 18.3.0
 
   '@radix-ui/rect@1.1.0': {}
 
@@ -4120,7 +4324,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 planChat
   - path: /components.json
     type: file
-  - path: /image.png
+  - path: /next.config.js
     type: file
   - path: /next.config.mjs
     type: file
@@ -4154,13 +4358,25 @@ planChat
     - path: /node_modules/@radix-ui
       type: directory
       contents:
+      - path: /node_modules/@radix-ui/react-dialog
+        type: directory
+        contents:
       - path: /node_modules/@radix-ui/react-dropdown-menu
         type: directory
         contents:
       - path: /node_modules/@radix-ui/react-icons
         type: directory
         contents:
+      - path: /node_modules/@radix-ui/react-label
+        type: directory
+        contents:
+      - path: /node_modules/@radix-ui/react-select
+        type: directory
+        contents:
       - path: /node_modules/@radix-ui/react-slot
+        type: directory
+        contents:
+      - path: /node_modules/@radix-ui/react-tabs
         type: directory
         contents:
     - path: /node_modules/@rushstack
@@ -4346,6 +4562,8 @@ planChat
     - path: /src/components
       type: directory
       contents:
+      - path: /src/components/AuthDialog.tsx
+        type: file
       - path: /src/components/Header.tsx
         type: file
       - path: /src/components/Hero.tsx
@@ -4355,7 +4573,17 @@ planChat
         contents:
         - path: /src/components/ui/button.tsx
           type: file
+        - path: /src/components/ui/dialog.tsx
+          type: file
         - path: /src/components/ui/dropdown-menu.tsx
+          type: file
+        - path: /src/components/ui/input.tsx
+          type: file
+        - path: /src/components/ui/label.tsx
+          type: file
+        - path: /src/components/ui/select.tsx
+          type: file
+        - path: /src/components/ui/tabs.tsx
           type: file
     - path: /src/lib
       type: directory
@@ -4363,8 +4591,6 @@ planChat
       - path: /src/lib/utils.ts
         type: file
   - path: /tailwind.config.ts
-    type: file
-  - path: /template-hero.html
     type: file
   - path: /tsconfig.json
     type: file
@@ -4390,7 +4616,7 @@ planChat
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-fira-sans);
+  font-family: var(--font-fira-sans), sans-serif;
 }
 
 @layer utilities {
@@ -4515,10 +4741,223 @@ export default function Home() {
 
 </src/app/page.tsx>
 
+<src/components/AuthDialog.tsx>
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { PersonIcon } from '@radix-ui/react-icons';
+import { cn } from '@/lib/utils';
+
+interface AuthDialogProps {
+  isScrolled: boolean;
+  buttonType: 'signin' | 'signup';
+  className?: string;
+}
+
+// Top countries with their phone codes and templates
+const topCountries = [
+  { code: 'US', name: 'United States', phoneCode: '+1', template: '(###) ###-####' },
+  { code: 'GB', name: 'United Kingdom', phoneCode: '+44', template: '#### ######' },
+  { code: 'CA', name: 'Canada', phoneCode: '+1', template: '(###) ###-####' },
+  { code: 'AU', name: 'Australia', phoneCode: '+61', template: '### ### ###' },
+  { code: 'DE', name: 'Germany', phoneCode: '+49', template: '### #######' },
+  { code: 'FR', name: 'France', phoneCode: '+33', template: '# ## ## ## ##' },
+  { code: 'JP', name: 'Japan', phoneCode: '+81', template: '## #### ####' },
+  { code: 'IN', name: 'India', phoneCode: '+91', template: '##### #####' },
+  { code: 'CN', name: 'China', phoneCode: '+86', template: '### #### ####' },
+  { code: 'BR', name: 'Brazil', phoneCode: '+55', template: '## #####-####' },
+  { code: 'UZ', name: 'Uzbekistan', phoneCode: '+998', template: '## ### ## ##' },
+];
+
+export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthDialogProps>) {
+  const [activeDialog, setActiveDialog] = useState<'signin' | 'signup' | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState(topCountries[0]);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const openSignIn = () => setActiveDialog('signin');
+  const openSignUp = () => setActiveDialog('signup');
+  const closeDialog = () => setActiveDialog(null);
+
+  const switchDialog = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveDialog((prev) => prev === 'signin' ? 'signup' : 'signin');
+      setIsAnimating(false);
+    }, 150);
+  };
+
+  const handleCountryChange = (value: string) => {
+    const country = topCountries.find(c => c.code === value);
+    if (country) {
+      setSelectedCountry(country);
+      setPhoneNumber(''); // Reset phone number when country changes
+    }
+  };
+
+  const formatPhoneNumber = (value: string, template: string) => {
+    let result = '';
+    let index = 0;
+    for (let i = 0; i < template.length && index < value.length; i++) {
+      if (template[i] === '#') {
+        result += value[index++];
+      } else {
+        result += template[i];
+      }
+    }
+    return result;
+  };
+
+  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+    const formattedValue = formatPhoneNumber(value, selectedCountry.template);
+    setPhoneNumber(formattedValue);
+  };
+
+  const isValidPhoneNumber = (phone: string) => {
+    // Remove non-digit characters for validation
+    const digitsOnly = phone.replace(/\D/g, '');
+    // Check if the number of digits matches the template
+    return digitsOnly.length === selectedCountry.template.replace(/\D/g, '').length;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (activeDialog === 'signup' && !isValidPhoneNumber(phoneNumber)) {
+      alert('Please enter a valid phone number');
+      return;
+    }
+    // TODO: Implement form submission logic
+    console.log('Form submitted', { country: selectedCountry, phoneNumber });
+  };
+
+  const inputClasses = "bg-white/10 border-white/20 text-white placeholder-white/50 focus:border-white/40 focus:ring-white/20";
+
+  const dialogContent = (title: string, isSignIn: boolean) => (
+    <DialogContent
+      className={cn(
+        "dialog-content w-[90%] max-w-[400px] p-4 sm:p-6 bg-[#18344a]/60 backdrop-blur-xl border border-white/30 rounded-xl shadow-xl",
+        "transition-all duration-300",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out",
+        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+        "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+        "data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]",
+        "data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]",
+        isAnimating && "animate-in fade-in-0 zoom-in-95"
+      )}
+    >
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-white">{title}</h2>
+        <DialogClose />
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="space-y-4">
+          {!isSignIn && (
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-white">Name</Label>
+              <Input id="name" placeholder="Enter your name" className={inputClasses} />
+            </div>
+          )}
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-white">Email</Label>
+            <Input id="email" type="email" placeholder="Enter your email" className={inputClasses} />
+          </div>
+          {!isSignIn && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="country" className="text-white">Country</Label>
+                <Select onValueChange={handleCountryChange} defaultValue={selectedCountry.code}>
+                  <SelectTrigger className={inputClasses}>
+                    <SelectValue placeholder="Select country" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {topCountries.map((country) => (
+                      <SelectItem key={country.code} value={country.code}>
+                        {country.name} ({country.phoneCode})
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-white">Phone Number</Label>
+                <div className="flex">
+                  <span className={cn(inputClasses, "flex items-center px-3 border-r-0 rounded-r-none")}>
+                    {selectedCountry.phoneCode}
+                  </span>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    value={phoneNumber}
+                    onChange={handlePhoneNumberChange}
+                    placeholder={selectedCountry.template.replace(/#/g, '0')}
+                    className={cn(inputClasses, "rounded-l-none")}
+                  />
+                </div>
+              </div>
+            </>
+          )}
+          <div className="space-y-2">
+            <Label htmlFor="password" className="text-white">Password</Label>
+            <Input id="password" type="password" placeholder={isSignIn ? "Enter your password" : "Create a password"} className={inputClasses} />
+          </div>
+          <Button type="submit" className="w-full bg-white text-[#18344a] hover:bg-white/90">
+            {isSignIn ? "Sign In" : "Sign Up"}
+          </Button>
+        </div>
+      </form>
+      <div className="mt-6 text-center">
+        <Button
+          variant="link"
+          className="text-blue-400 hover:text-blue-300 p-0"
+          onClick={switchDialog}
+        >
+          {isSignIn ? "Don't have an account? Sign Up" : "Already have an account? Sign In"}
+        </Button>
+      </div>
+    </DialogContent>
+  );
+
+  const buttonText = buttonType === 'signin' ? 'Sign In' : 'Sign Up';
+
+  return (
+    <Dialog open={activeDialog !== null} onOpenChange={(open) => open ? (buttonType === 'signin' ? openSignIn() : openSignUp()) : closeDialog()}>
+      <DialogTrigger asChild>
+        <Button
+          variant={isScrolled ? "default" : "outline"}
+          size="default"
+          className={cn(
+            "transition duration-300",
+            isScrolled
+              ? "bg-[#18344a] text-white hover:bg-[#224b6b]"
+              : "border-white/30 text-white hover:bg-white/20",
+            className
+          )}
+          onClick={buttonType === 'signin' ? openSignIn : openSignUp}
+        >
+          <PersonIcon className="mr-2 h-4 w-4" />
+          {buttonText}
+        </Button>
+      </DialogTrigger>
+      {activeDialog && dialogContent(activeDialog === 'signin' ? "Sign In" : "Sign Up", activeDialog === 'signin')}
+    </Dialog>
+  );
+}
+
+</src/components/AuthDialog.tsx>
+
 <src/components/Header.tsx>
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -4529,27 +4968,58 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from 'lucide-react';
-import { Button } from "@/components/ui/button";
+import { AuthDialog } from '@/components/AuthDialog';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
+  const [isDesktopSolutionsOpen, setIsDesktopSolutionsOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        mobileMenuButtonRef.current &&
+        !mobileMenuButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
+
+  const openMobileMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsMenuOpen(true);
+  };
+
+  const closeMobileMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-30 w-11/12 max-w-7xl font-sans font-medium">
       <div className={cn(
-        "transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4 rounded-2xl",
-        isScrolled ? "bg-white/90 shadow-lg backdrop-blur-md" : "bg-white/5 backdrop-blur-md"
+        "transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4 rounded-2xl border",
+        isScrolled
+          ? "bg-white/90 shadow-lg backdrop-blur-md border-gray-200"
+          : "bg-white/5 backdrop-blur-md border-white/10"
       )}>
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -4561,18 +5031,25 @@ const Header: React.FC = () => {
                 width={188}
                 height={55}
                 className="w-auto h-8"
+                priority
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </Link>
           </div>
 
           {/* Desktop menu */}
           <nav className="hidden lg:flex space-x-8">
-            <DropdownMenu>
+            <DropdownMenu onOpenChange={setIsDesktopSolutionsOpen}>
               <DropdownMenuTrigger className={cn(
                 "text-base font-medium flex items-center px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30",
                 isScrolled ? "text-[#18344a] hover:text-[#224b6b]" : "text-white hover:text-gray-300"
               )}>
-                Solutions <ChevronDown className="ml-1 h-4 w-4" />
+                Solutions
+                <ChevronDown className={cn(
+                  "ml-1 h-4 w-4 transition-transform duration-200",
+                  isDesktopSolutionsOpen ? "rotate-180" : ""
+                )} />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-[#18344a]/70 backdrop-blur-lg border border-white/30 rounded-md">
                 <DropdownMenuItem className="text-base text-white hover:bg-white/30">
@@ -4606,26 +5083,15 @@ const Header: React.FC = () => {
             )}>Blog</Link>
           </nav>
 
-          {/* Sign In Button */}
+          {/* Sign In Button for desktop */}
           <div className="hidden lg:block">
-            <Button
-              asChild
-              variant={isScrolled ? "default" : "outline"}
-              size="default"
-              className={cn(
-                "transition duration-300",
-                isScrolled
-                  ? "bg-[#18344a] text-white hover:bg-[#224b6b]"
-                  : "border-white/30 text-white hover:bg-white/20"
-              )}
-            >
-              <Link href="/sign-in">Sign In</Link>
-            </Button>
+            <AuthDialog isScrolled={isScrolled} buttonType="signin" />
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
+              ref={mobileMenuButtonRef}
               type="button"
               className={cn(
                 "inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30",
@@ -4633,9 +5099,11 @@ const Header: React.FC = () => {
                   ? "text-[#18344a] hover:text-[#224b6b] hover:bg-gray-100"
                   : "text-white hover:text-gray-300 hover:bg-white/10"
               )}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={isMenuOpen ? closeMobileMenu : openMobileMenu}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">
+                {isMenuOpen ? 'Close main menu' : 'Open main menu'}
+              </span>
               {isMenuOpen ? (
                 <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -4651,49 +5119,54 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="lg:hidden mt-2 rounded-xl bg-[#18344a]/70 backdrop-blur-lg shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30 flex justify-between items-center">
-                Solutions
-                <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-200 ${isMobileSolutionsOpen ? 'rotate-180' : ''}`} />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                className="bg-[#18344a]/70 backdrop-blur-lg border border-white/30 rounded-md w-full"
-                onOpenChange={(open) => setIsMobileSolutionsOpen(open)}
-              >
-                <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
-                  <Link href="/safety-compliance" className="w-full">Safety Compliance</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
-                  <Link href="/trucking-factoring" className="w-full">Trucking Factoring</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
-                  <Link href="/administrative" className="w-full">Administrative</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
-                  <Link href="/trucking-insurance" className="w-full">Trucking Insurance</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
-                  <Link href="/freight-planning" className="w-full">Freight Planning</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Link href="/about-us" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">About Us</Link>
-            <Link href="/contact-us" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">Contact Us</Link>
-            <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">Blog</Link>
-            <Button
-              asChild
-              variant="outline"
-              size="default"
-              className="w-full justify-start bg-white/10 text-white hover:bg-white/20 rounded-md text-base"
-            >
-              <Link href="/sign-in">Sign In</Link>
-            </Button>
+      <div
+        ref={mobileMenuRef}
+        className={cn(
+          "lg:hidden mt-2 rounded-xl bg-[#18344a]/70 backdrop-blur-lg shadow-lg border border-white/10",
+          "transition-all duration-300 ease-in-out origin-top",
+          isMenuOpen
+            ? "opacity-100 scale-y-100 translate-y-0"
+            : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
+        )}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          <DropdownMenu onOpenChange={setIsMobileSolutionsOpen}>
+            <DropdownMenuTrigger className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30 flex justify-between items-center">
+              Solutions
+              <ChevronDown className={cn(
+                "ml-2 h-4 w-4 transition-transform duration-200",
+                isMobileSolutionsOpen ? "rotate-180" : ""
+              )} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-[#18344a]/90 backdrop-blur-lg border border-white/20 rounded-md w-full">
+              <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
+                <Link href="/safety-compliance" className="w-full">Safety Compliance</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
+                <Link href="/trucking-factoring" className="w-full">Trucking Factoring</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
+                <Link href="/administrative" className="w-full">Administrative</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
+                <Link href="/trucking-insurance" className="w-full">Trucking Insurance</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="text-sm text-white hover:bg-white/30">
+                <Link href="/freight-planning" className="w-full">Freight Planning</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link href="/about-us" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">About Us</Link>
+          <Link href="/contact-us" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">Contact Us</Link>
+          <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30">Blog</Link>
+
+          {/* Auth buttons container */}
+          <div className="flex justify-around items-center mt-4 px-3 py-2">
+            <AuthDialog isScrolled={isScrolled} buttonType="signin" className="flex-1 mr-2" />
+            <AuthDialog isScrolled={isScrolled} buttonType="signup" className="flex-1 ml-2" />
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
@@ -4815,6 +5288,142 @@ Button.displayName = "Button"
 export { Button, buttonVariants }
 
 </src/components/ui/button.tsx>
+
+<src/components/ui/dialog.tsx>
+import * as React from "react"
+import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { X } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const Dialog = DialogPrimitive.Root
+
+const DialogTrigger = DialogPrimitive.Trigger
+
+const DialogPortal = DialogPrimitive.Portal
+
+const DialogClose = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Close>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Close>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Close
+    ref={ref}
+    className={cn(
+      "inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300 hover:bg-white/10",
+      className
+    )}
+    {...props}
+  >
+    <X className="h-6 w-6" />
+    <span className="sr-only">Close</span>
+  </DialogPrimitive.Close>
+))
+DialogClose.displayName = DialogPrimitive.Close.displayName
+
+const DialogOverlay = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Overlay
+    ref={ref}
+    className={cn(
+      "fixed inset-0 z-50 bg-black/50 backdrop-blur-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      className
+    )}
+    {...props}
+  />
+))
+DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
+
+const DialogContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogPrimitive.Content
+      ref={ref}
+      className={cn(
+        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background/60 p-6 shadow-lg backdrop-blur-xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </DialogPrimitive.Content>
+  </DialogPortal>
+))
+DialogContent.displayName = DialogPrimitive.Content.displayName
+
+const DialogHeader = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
+    className={cn(
+      "flex flex-col space-y-1.5 text-center sm:text-left",
+      className
+    )}
+    {...props}
+  />
+)
+DialogHeader.displayName = "DialogHeader"
+
+const DialogFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
+    className={cn(
+      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+      className
+    )}
+    {...props}
+  />
+)
+DialogFooter.displayName = "DialogFooter"
+
+const DialogTitle = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Title>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Title
+    ref={ref}
+    className={cn(
+      "text-lg font-semibold leading-none tracking-tight",
+      className
+    )}
+    {...props}
+  />
+))
+DialogTitle.displayName = DialogPrimitive.Title.displayName
+
+const DialogDescription = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Description>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Description
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+DialogDescription.displayName = DialogPrimitive.Description.displayName
+
+export {
+  Dialog,
+  DialogPortal,
+  DialogOverlay,
+  DialogClose,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+}
+
+</src/components/ui/dialog.tsx>
 
 <src/components/ui/dropdown-menu.tsx>
 "use client"
@@ -5021,6 +5630,291 @@ export {
 
 </src/components/ui/dropdown-menu.tsx>
 
+<src/components/ui/input.tsx>
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cn(
+          "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Input.displayName = "Input"
+
+export { Input }
+
+</src/components/ui/input.tsx>
+
+<src/components/ui/label.tsx>
+"use client"
+
+import * as React from "react"
+import * as LabelPrimitive from "@radix-ui/react-label"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const labelVariants = cva(
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+)
+
+const Label = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+    VariantProps<typeof labelVariants>
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cn(labelVariants(), className)}
+    {...props}
+  />
+))
+Label.displayName = LabelPrimitive.Root.displayName
+
+export { Label }
+
+</src/components/ui/label.tsx>
+
+<src/components/ui/select.tsx>
+"use client"
+
+import * as React from "react"
+import {
+  CaretSortIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@radix-ui/react-icons"
+import * as SelectPrimitive from "@radix-ui/react-select"
+
+import { cn } from "@/lib/utils"
+
+const Select = SelectPrimitive.Root
+
+const SelectGroup = SelectPrimitive.Group
+
+const SelectValue = SelectPrimitive.Value
+
+const SelectTrigger = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+      className
+    )}
+    {...props}
+  >
+    {children}
+    <SelectPrimitive.Icon asChild>
+      <CaretSortIcon className="h-4 w-4 opacity-50" />
+    </SelectPrimitive.Icon>
+  </SelectPrimitive.Trigger>
+))
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+
+const SelectScrollUpButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.ScrollUpButton
+    ref={ref}
+    className={cn(
+      "flex cursor-default items-center justify-center py-1",
+      className
+    )}
+    {...props}
+  >
+    <ChevronUpIcon />
+  </SelectPrimitive.ScrollUpButton>
+))
+SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
+
+const SelectScrollDownButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.ScrollDownButton
+    ref={ref}
+    className={cn(
+      "flex cursor-default items-center justify-center py-1",
+      className
+    )}
+    {...props}
+  >
+    <ChevronDownIcon />
+  </SelectPrimitive.ScrollDownButton>
+))
+SelectScrollDownButton.displayName =
+  SelectPrimitive.ScrollDownButton.displayName
+
+const SelectContent = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
+>(({ className, children, position = "popper", ...props }, ref) => (
+  <SelectPrimitive.Portal>
+    <SelectPrimitive.Content
+      ref={ref}
+      className={cn(
+        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        position === "popper" &&
+          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+        className
+      )}
+      position={position}
+      {...props}
+    >
+      <SelectScrollUpButton />
+      <SelectPrimitive.Viewport
+        className={cn(
+          "p-1",
+          position === "popper" &&
+            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+        )}
+      >
+        {children}
+      </SelectPrimitive.Viewport>
+      <SelectScrollDownButton />
+    </SelectPrimitive.Content>
+  </SelectPrimitive.Portal>
+))
+SelectContent.displayName = SelectPrimitive.Content.displayName
+
+const SelectLabel = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Label>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.Label
+    ref={ref}
+    className={cn("px-2 py-1.5 text-sm font-semibold", className)}
+    {...props}
+  />
+))
+SelectLabel.displayName = SelectPrimitive.Label.displayName
+
+const SelectItem = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    {...props}
+  >
+    <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
+      <SelectPrimitive.ItemIndicator>
+        <CheckIcon className="h-4 w-4" />
+      </SelectPrimitive.ItemIndicator>
+    </span>
+    <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+  </SelectPrimitive.Item>
+))
+SelectItem.displayName = SelectPrimitive.Item.displayName
+
+const SelectSeparator = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Separator>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.Separator
+    ref={ref}
+    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    {...props}
+  />
+))
+SelectSeparator.displayName = SelectPrimitive.Separator.displayName
+
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton,
+}
+
+</src/components/ui/select.tsx>
+
+<src/components/ui/tabs.tsx>
+"use client"
+
+import * as React from "react"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+
+import { cn } from "@/lib/utils"
+
+const Tabs = TabsPrimitive.Root
+
+const TabsList = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn(
+      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+      className
+    )}
+    {...props}
+  />
+))
+TabsList.displayName = TabsPrimitive.List.displayName
+
+const TabsTrigger = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow",
+      className
+    )}
+    {...props}
+  />
+))
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+
+const TabsContent = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn(
+      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className
+    )}
+    {...props}
+  />
+))
+TabsContent.displayName = TabsPrimitive.Content.displayName
+
+export { Tabs, TabsList, TabsTrigger, TabsContent }
+
+</src/components/ui/tabs.tsx>
+
 <src/lib/utils.ts>
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
@@ -5033,6 +5927,8 @@ export function cn(...inputs: ClassValue[]) {
 
 <tailwind.config.ts>
 import type { Config } from "tailwindcss";
+
+import tailwindcss_animate from "tailwindcss-animate";
 
 const config: Config = {
     darkMode: ["class"],
@@ -5116,31 +6012,11 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcss_animate],
 };
 export default config;
 
 </tailwind.config.ts>
-
-<template-hero.html>
-<section class="hero-section d-flex align-items-center">
-  <video id="background_video" loop="" muted="">
-    <source src="/wp-content/themes/simplex/assets/hero-video.mp4" type="video/mp4"></video>
-  <div id="video_cover" data-rocket-lazy-bg-b20543e3-1b21-4a2a-a9b8-3d09b4d02a7f="loaded" style="display: none;"></div>
-  <div class="container opacity-bg py-5 py-md-2">
-    <div class="row">
-      <div class="col-12 d-flex flex-column align-items-center justify-content-center text-center">
-        <h2 class="h1 lg-heading c-white">You Keep Our Nation Running</h2>
-        <p class="paragraph c-white">Encouraging and supporting transportation entrepreneurs, just like you for over 20
-          years! </p>
-        <button type="button" data-toggle="modal" title="Click to Get Free Consultation" data-target="#heroModal"
-          class="main-btn-sm">GET A FREE CONSULTATION</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-</template-hero.html>
 
 <tsconfig.json>
 {
