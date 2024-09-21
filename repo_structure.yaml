@@ -41,6 +41,9 @@ planChat
       - path: /node_modules/@radix-ui/react-icons
         type: directory
         contents:
+      - path: /node_modules/@radix-ui/react-slot
+        type: directory
+        contents:
     - path: /node_modules/@rushstack
       type: directory
       contents:
@@ -177,11 +180,11 @@ planChat
         type: file
       - path: /public/images/image_2024-08-27_08-04-56.png
         type: file
-      - path: /public/images/Light Logo.png
-        type: file
       - path: /public/images/Light Logo.svg
         type: file
-      - path: /public/images/logo.png
+      - path: /public/images/logo-dark.png
+        type: file
+      - path: /public/images/logo-light.png
         type: file
       - path: /public/images/photo_2024-08-25_09-03-26.jpg
         type: file
@@ -231,6 +234,8 @@ planChat
       - path: /src/components/ui
         type: directory
         contents:
+        - path: /src/components/ui/button.tsx
+          type: file
         - path: /src/components/ui/dropdown-menu.tsx
           type: file
     - path: /src/lib
