@@ -17,6 +17,7 @@ const Hero: React.FC = () => {
         autoPlay
         loop
         muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/videos/hero-video.mp4" type="video/mp4" />
