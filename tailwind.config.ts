@@ -86,14 +86,6 @@ const config: Config = {
   	animation: {
     	'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
     	'pulse-slow-rounded': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-  		borderRadius: {
-  			// ... existing border radius definitions
-  			'4xl': '2rem',
-  			'5xl': '2.5rem',
-  			'6xl': '3rem',
-  			'7xl': '3.5rem',
-  			'8xl': '4rem',
-  		}
   	},
   	keyframes: {
     	pulse: {
