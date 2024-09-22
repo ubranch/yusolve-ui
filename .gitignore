@@ -36,6 +36,6 @@ yarn-error.log*
 next-env.d.ts
 
 # context
-flattened_repo.txt
-repo_structure.yaml
-certificates
+._flattened.txt
+._structure.yaml
+._system.txt

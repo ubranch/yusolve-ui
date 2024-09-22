@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -46,31 +47,24 @@ const AboutSection: React.FC = () => {
 
           {/* Right Column */}
           <div className="w-full lg:w-1/2">
-            <div className="relative w-full" style={{ paddingTop: '75%' }}>
-              <div className="absolute inset-0 rounded-[2rem] overflow-hidden">
-                {/* Image without any shadows */}
-                <Image
-                  src="/images/hp-img.jpg"
-                  alt="YUSOLVE"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                  }}
-                  className={cn(
-                    "rounded-[2rem] relative z-10"
-                  )}
-                  priority
-                />
-
-                {/* Overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#18344a]/50 to-transparent mix-blend-multiply"></div>
-
-                {/* Highlights */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/15 to-transparent opacity-60 mix-blend-overlay"></div>
-                <div className="absolute inset-0 bg-gradient-to-tl from-white/10 to-transparent opacity-40 mix-blend-overlay"></div>
-              </div>
+            <div className="relative w-auto sm:w-[36rem] h-[450px] rounded-[2rem] overflow-hidden">
+              <Image
+                src="/images/hp-img.jpg"
+                alt="YUSOLVE"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-[2rem] shadow-md"
+                priority
+                onError={(e) => {
+                  console.error("Error loading image:", e);
+                  // Fallback to a placeholder or default image
+                  e.currentTarget.src = "/images/placeholder.jpg";
+                }}
+              />
+              {/* Overlay for depth */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#18344a]/30 to-transparent mix-blend-multiply pointer-events-none"></div>
+              {/* Highlights */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50 mix-blend-overlay pointer-events-none"></div>
             </div>
           </div>
         </div>

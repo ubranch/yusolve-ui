@@ -5,7 +5,7 @@ import React from "react";
 
 const firaSans = Fira_Sans({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '700'],
   variable: '--font-fira-sans',
 });
 
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${firaSans.variable} font-sans font-medium`}>
+      <body className={`${firaSans.variable} font-sans`}>
         {children}
       </body>
     </html>
