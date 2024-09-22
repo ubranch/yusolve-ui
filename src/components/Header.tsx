@@ -15,17 +15,12 @@ import { AuthDialog } from '@/components/AuthDialog';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [isDesktopSolutionsOpen, setIsDesktopSolutionsOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
     const handleClickOutside = (event: MouseEvent) => {
       if (
         mobileMenuRef.current &&
@@ -37,11 +32,9 @@ const Header: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
@@ -57,19 +50,14 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-30 w-11/12 max-w-7xl font-sans font-medium">
-      <div className={cn(
-        "transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4 rounded-2xl border",
-        isScrolled
-          ? "bg-white/90 shadow-lg backdrop-blur-md border-gray-200"
-          : "bg-white/5 backdrop-blur-md border-white/10"
-      )}>
+    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-30 w-[95%] max-w-[1400px] font-sans font-medium">
+      <div className="transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4 rounded-2xl border bg-white/5 backdrop-blur-md border-white/10">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src={isScrolled ? "/images/logo.png" : "/images/logo-light.png"}
+                src="/images/logo-light.png"
                 alt="Simplex Group"
                 width={188}
                 height={55}
@@ -77,6 +65,7 @@ const Header: React.FC = () => {
                 priority
                 quality={85}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ color: 'transparent' }}  // Add this line
               />
             </Link>
           </div>
@@ -84,10 +73,7 @@ const Header: React.FC = () => {
           {/* Desktop menu */}
           <nav className="hidden lg:flex space-x-8">
             <DropdownMenu onOpenChange={setIsDesktopSolutionsOpen}>
-              <DropdownMenuTrigger className={cn(
-                "text-base font-medium flex items-center px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30",
-                isScrolled ? "text-[#18344a] hover:text-[#224b6b]" : "text-white hover:text-gray-300"
-              )}>
+              <DropdownMenuTrigger className="text-base font-medium flex items-center px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
                 Solutions
                 <ChevronDown className={cn(
                   "ml-1 h-4 w-4 transition-transform duration-200",
@@ -112,23 +98,20 @@ const Header: React.FC = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link href="/about-us" className={cn(
-              "text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30",
-              isScrolled ? "text-[#18344a] hover:text-[#224b6b]" : "text-white hover:text-gray-300"
-            )}>About Us</Link>
-            <Link href="/contact-us" className={cn(
-              "text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30",
-              isScrolled ? "text-[#18344a] hover:text-[#224b6b]" : "text-white hover:text-gray-300"
-            )}>Contact Us</Link>
-            <Link href="/blog" className={cn(
-              "text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30",
-              isScrolled ? "text-[#18344a] hover:text-[#224b6b]" : "text-white hover:text-gray-300"
-            )}>Blog</Link>
+            <Link href="/about-us" className="text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
+              About Us
+            </Link>
+            <Link href="/contact-us" className="text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
+              Contact Us
+            </Link>
+            <Link href="/blog" className="text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
+              Blog
+            </Link>
           </nav>
 
           {/* Sign In Button for desktop */}
           <div className="hidden lg:block">
-            <AuthDialog isScrolled={isScrolled} buttonType="signin" />
+            <AuthDialog isScrolled={false} buttonType="signin" />
           </div>
 
           {/* Mobile menu button */}
@@ -136,12 +119,7 @@ const Header: React.FC = () => {
             <button
               ref={mobileMenuButtonRef}
               type="button"
-              className={cn(
-                "inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30",
-                isScrolled
-                  ? "text-[#18344a] hover:text-[#224b6b] hover:bg-gray-100"
-                  : "text-white hover:text-gray-300 hover:bg-white/10"
-              )}
+              className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300 hover:bg-white/10"
               onClick={isMenuOpen ? closeMobileMenu : openMobileMenu}
             >
               <span className="sr-only">
@@ -205,8 +183,8 @@ const Header: React.FC = () => {
 
           {/* Auth buttons container */}
           <div className="flex justify-around items-center mt-4 px-3 py-2">
-            <AuthDialog isScrolled={isScrolled} buttonType="signin" className="flex-1 mr-2" />
-            <AuthDialog isScrolled={isScrolled} buttonType="signup" className="flex-1 ml-2" />
+            <AuthDialog isScrolled={false} buttonType="signin" className="flex-1 mr-2" />
+            <AuthDialog isScrolled={false} buttonType="signup" className="flex-1 ml-2" />
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
           {["I own a trucking company", "I work for a trucking company", "I am an owner operator", "I want to start my own trucking business", "I am a truck driver", "Other"].map((option) => (
             <div key={option} className="flex flex-row items-center space-x-3 space-y-0 mb-2">
               <RadioGroupItem value={option} id={option} className="ml-auto" />
-              <Label htmlFor={option} className="text-base font-normal flex-grow">
+              <Label htmlFor={option} className="text-base font-normal flex-grow text-white">
                 {option}
               </Label>
             </div>
@@ -83,7 +83,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
                 }}
                 className="ml-auto"
               />
-              <Label htmlFor={interest} className="text-base font-normal flex-grow">
+              <Label htmlFor={interest} className="text-base font-normal flex-grow text-white">
                 {interest}
               </Label>
             </div>
@@ -96,15 +96,15 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
       content: (
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="fullName">Full Name</Label>
+            <Label htmlFor="fullName" className="text-white">Full Name</Label>
             <Input id="fullName" name="fullName" value={formData.fullName} onChange={handleInputChange} required className={inputClasses} placeholder="Enter your name" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-white">Email</Label>
             <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className={inputClasses} placeholder="Enter your email" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone</Label>
+            <Label htmlFor="phone" className="text-white">Phone</Label>
             <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} required className={inputClasses} placeholder="Enter your phone number" />
           </div>
         </div>
@@ -114,7 +114,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
       title: "Additional Information",
       content: (
         <div className="space-y-2">
-          <Label htmlFor="additionalInfo">Is there anything else you want to say?</Label>
+          <Label htmlFor="additionalInfo" className="text-white">Is there anything else you want to say?</Label>
           <Textarea
             id="additionalInfo"
             name="additionalInfo"

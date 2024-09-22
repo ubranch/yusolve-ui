@@ -1,8 +1,11 @@
+// @ts-check
+import withPlaiceholder from "@plaiceholder/next";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'simplexgroup.net'],
   },
 };
 
-export default nextConfig;
+export default withPlaiceholder(nextConfig);
