@@ -22,7 +22,7 @@ export const Card = React.memo(
       className={cn(
         "relative overflow-hidden h-80 md:h-[28rem] w-full transition-all duration-300 ease-out",
         "rounded-[2rem] shadow-md", // Unified roundness
-        hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
+        hovered !== null && hovered !== index && "md:blur-sm md:scale-[0.98]"
       )}
     >
       <Image
@@ -35,7 +35,7 @@ export const Card = React.memo(
         <div
           className={cn(
             "w-full transition-opacity duration-300",
-            hovered === index ? "opacity-100" : "opacity-0"
+            "opacity-100 md:opacity-0 md:group-hover:opacity-100" // Always visible on mobile, hover effect on larger screens
           )}
         >
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg">
@@ -59,19 +59,20 @@ type Card = {
   href: string;
 };
 
-export function FocusCards({ cards }: { cards: Card[] }) {
+export function FocusCards({ cards }: Readonly<{ cards: Card[] }>) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {cards.map((card, index) => (
-        <Card
-          key={card.title}
-          card={card}
-          index={index}
-          hovered={hovered}
-          setHovered={setHovered}
-        />
+        <div key={card.title} className="group">
+          <Card
+            card={card}
+            index={index}
+            hovered={hovered}
+            setHovered={setHovered}
+          />
+        </div>
       ))}
     </div>
   );

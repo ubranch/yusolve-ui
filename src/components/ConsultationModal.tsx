@@ -51,7 +51,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
 
   const steps = [
     {
-      title: "Let us know who you are so we can better assist you:",
+      title: "Let us know who you are so we can better \n assist you:",
       content: (
         <RadioGroup value={formData.role} onValueChange={(value) => setFormData(prev => ({ ...prev, role: value }))}>
           {["I own a trucking company", "I work for a trucking company", "I am an owner operator", "I want to start my own trucking business", "I am a truck driver", "Other"].map((option) => (
@@ -77,9 +77,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
                 onCheckedChange={(checked) => {
                   if (checked) {
                     handleCheckboxChange(interest);
-                  } else {
-                    handleCheckboxChange(interest);
-                  }
+                  } else handleCheckboxChange(interest);
                 }}
                 className="ml-auto"
               />

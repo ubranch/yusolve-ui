@@ -5,33 +5,33 @@ const SolutionsSection: React.FC = () => {
   const cards = [
     {
       title: "DOT Safety Compliance",
-      src: "https://simplexgroup.net/wp-content/uploads/2023/01/service-DOT.jpg",
+      src: "/images/solutions/service-DOT.jpg",
       href: "/dot-safety-compliance/"
     },
     {
       title: "Permits & Tax Services",
-      src: "https://simplexgroup.net/wp-content/uploads/2023/01/service-permits.jpg",
-      href: "https://simplexgroup.net/permits/"
+      src: "/images/solutions/service-permits.jpg",
+      href: "/permits/"
     },
     {
       title: "Freight Planning",
-      src: "https://simplexgroup.net/wp-content/uploads/2023/01/service-freight-planning.jpg",
-      href: "https://simplexgroup.net/freight-planning/"
+      src: "/images/solutions/service-freight-planning.jpg",
+      href: "/freight-planning/"
     },
     {
       title: "Factoring",
-      src: "https://simplexgroup.net/wp-content/uploads/2023/01/service-factoring.jpg",
-      href: "https://simplexgroup.net/factoring/"
+      src: "/images/solutions/service-factoring.jpg",
+      href: "/factoring/"
     },
     {
       title: "Insurance",
-      src: "https://simplexgroup.net/wp-content/uploads/2023/01/service-insurance.jpg",
-      href: "https://simplexgroup.net/insurance-coverage/"
+      src: "/images/solutions/service-insurance.jpg",
+      href: "/insurance-coverage/"
     },
     {
       title: "ELD",
-      src: "https://simplexgroup.net/wp-content/uploads/2023/01/service-eld.jpg",
-      href: "https://simplexgroup.net/eld-system/"
+      src: "/images/solutions/service-eld.jpg",
+      href: "/eld-system/"
     }
   ];
 
@@ -41,7 +41,9 @@ const SolutionsSection: React.FC = () => {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-[#18344a] lg:text-white mb-12">
           Our Solutions
         </h2>
-        <FocusCards cards={cards} />
+        <div className="w-full"> {/* Added this wrapper div */}
+          <FocusCards cards={cards} />
+        </div>
       </div>
     </section>
   );

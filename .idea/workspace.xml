@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="faac73f2-0208-4b9d-b64e-a83ee27fb665" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fr.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AboutSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system_prompt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ConsultationModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConsultationModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SolutionsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SolutionsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/focus-cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/focus-cards.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +43,12 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "unknown",
+    "last_opened_file_path": "C:/Launcher/Projects/yusolve/yusolve-ui",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.eslint": "C:\\Launcher\\Projects\\yusolve\\yusolve-ui\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.build.executor": "Run",
@@ -105,6 +114,8 @@
       <workItem from="1726980124400" duration="959000" />
       <workItem from="1727023634573" duration="613000" />
       <workItem from="1727027230932" duration="9553000" />
+      <workItem from="1727052266195" duration="3356000" />
+      <workItem from="1727058106168" duration="3711000" />
     </task>
     <servers />
   </component>

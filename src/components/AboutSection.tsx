@@ -46,15 +46,16 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Right Column */}
-          <div className="w-full lg:w-1/2">
-            <div className="relative w-auto sm:w-[36rem] h-[450px] rounded-[2rem] overflow-hidden">
+          <div className="w-full lg:w-1/2 mt-0 lg:mt-0">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] md:aspect-[9/5] lg:aspect-[16/10] rounded-[2rem] overflow-hidden shadow-lg">
               <Image
                 src="/images/hp-img.jpg"
                 alt="YUSOLVE"
                 layout="fill"
                 objectFit="cover"
-                className="rounded-[2rem] shadow-md"
+                className="rounded-[2rem]"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onError={(e) => {
                   console.error("Error loading image:", e);
                   // Fallback to a placeholder or default image

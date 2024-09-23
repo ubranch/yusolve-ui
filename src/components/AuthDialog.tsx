@@ -161,7 +161,7 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
       </form>
       <div className="mt-6 text-center">
         <Button
-          variant="link"
+          variant="linkHover2"
           className="text-blue-400 hover:text-blue-300 p-0"
           onClick={switchDialog}
         >

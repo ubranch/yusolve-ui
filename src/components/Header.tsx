@@ -10,8 +10,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from 'lucide-react';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { AuthDialog } from '@/components/AuthDialog';
+import { Button } from "@/components/ui/button";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,7 +66,7 @@ const Header: React.FC = () => {
                 priority
                 quality={85}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ color: 'transparent' }}  // Add this line
+                style={{ color: 'transparent' }}
               />
             </Link>
           </div>
@@ -73,12 +74,14 @@ const Header: React.FC = () => {
           {/* Desktop menu */}
           <nav className="hidden lg:flex space-x-8">
             <DropdownMenu onOpenChange={setIsDesktopSolutionsOpen}>
-              <DropdownMenuTrigger className="text-base font-medium flex items-center px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
-                Solutions
-                <ChevronDown className={cn(
-                  "ml-1 h-4 w-4 transition-transform duration-200",
-                  isDesktopSolutionsOpen ? "rotate-180" : ""
-                )} />
+              <DropdownMenuTrigger asChild>
+                <Button variant="linkHover2" className="text-white hover:text-gray-300">
+                  Solutions
+                  <ChevronDownIcon className={cn(
+                    "ml-1 h-4 w-4 transition-transform duration-200",
+                    isDesktopSolutionsOpen ? "rotate-180" : ""
+                  )} />
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-[#18344a]/70 backdrop-blur-lg border border-white/30 rounded-md">
                 <DropdownMenuItem className="text-base text-white hover:bg-white/30">
@@ -98,15 +101,15 @@ const Header: React.FC = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link href="/about-us" className="text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
-              About Us
-            </Link>
-            <Link href="/contact-us" className="text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
-              Contact Us
-            </Link>
-            <Link href="/blog" className="text-base font-medium px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white/30 text-white hover:text-gray-300">
-              Blog
-            </Link>
+            <Button variant="linkHover2" asChild className="text-white hover:text-gray-300">
+              <Link href="/about-us">About Us</Link>
+            </Button>
+            <Button variant="linkHover2" asChild className="text-white hover:text-gray-300">
+              <Link href="/contact-us">Contact Us</Link>
+            </Button>
+            <Button variant="linkHover2" asChild className="text-white hover:text-gray-300">
+              <Link href="/blog">Blog</Link>
+            </Button>
           </nav>
 
           {/* Sign In Button for desktop */}
@@ -154,7 +157,7 @@ const Header: React.FC = () => {
           <DropdownMenu onOpenChange={setIsMobileSolutionsOpen}>
             <DropdownMenuTrigger className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/30 flex justify-between items-center">
               Solutions
-              <ChevronDown className={cn(
+              <ChevronDownIcon className={cn(
                 "ml-2 h-4 w-4 transition-transform duration-200",
                 isMobileSolutionsOpen ? "rotate-180" : ""
               )} />
