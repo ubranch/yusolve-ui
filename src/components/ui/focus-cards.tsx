@@ -38,7 +38,7 @@ export const Card = React.memo(
             "opacity-100 md:opacity-0 md:group-hover:opacity-100" // Always visible on mobile, hover effect on larger screens
           )}
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg">
+          <h3 className="text-3xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg">
             {card.title}
           </h3>
         </div>

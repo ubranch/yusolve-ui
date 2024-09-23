@@ -40,7 +40,7 @@ const SolutionsSection: React.FC = () => {
 
   return (
     <section id="services-section" className="relative bg-white lg:bg-[#18344a]">
-      
+
       <LampContainer
         className="pt-40 sm:pt-44 md:pt-30 lg:pt-52 pb-20 sm:pb-32 md:pb-40 lg:pb-52"
         bgColor="bg-white lg:bg-[#18344a]"

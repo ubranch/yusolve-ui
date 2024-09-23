@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-fira-sans)', 'sans-serif'],
+        sans: ['var(--font-sf-pro-display)', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -74,11 +74,16 @@ const config = {
           from: { backgroundPosition: '200% 0' },
           to: { backgroundPosition: '-200% 0' },
         },
+        "background-shine": {
+          "0%": { backgroundPosition: "200% 200%" },
+          "100%": { backgroundPosition: "0% 0%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "shine": "shine 8s ease-in-out infinite",
+        "background-shine": "background-shine 3s linear infinite",
       },
     },
   },

@@ -1,12 +1,27 @@
 import type { Metadata } from "next";
-import { Fira_Sans } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import React from "react";
 
-const firaSans = Fira_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-fira-sans',
+const sfProDisplay = localFont({
+  src: [
+    {
+      path: './fonts/SF-Pro-Display-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SF-Pro-Display-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SF-Pro-Display-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-sf-pro-display',
 });
 
 export const metadata: Metadata = {
@@ -21,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${firaSans.variable} font-sans`}>
+      <body className={`${sfProDisplay.variable} font-sans`}>
         {children}
       </body>
     </html>
