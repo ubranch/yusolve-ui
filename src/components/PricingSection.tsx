@@ -15,7 +15,7 @@ const plans = [
   },
   {
     name: "SUBSCRIPTION 2",
-    desc: "Advanced package for growing trucking companies.",
+    desc: "Advanced package for growing companies.",
     price: 1000,
     isMostPop: true,
     features: ["HR / Hiring", "Safety", "Insurance", "Equipment", "24/7 Support"],
