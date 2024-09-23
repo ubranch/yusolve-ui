@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <div className="flex flex-col items-center justify-center text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+          <h2 className="text-2xl md:text-3xl lg:text-6xl font-bold text-white mb-3">
             You Keep Our Nation Running
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-white mb-5 max-w-xl">
