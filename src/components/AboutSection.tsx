@@ -14,10 +14,8 @@ const AboutSection: React.FC = () => {
     >
       {/* Grid effect background */}
       <div className='z-100 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,#18344a_1px,transparent_1px),linear-gradient(to_bottom,#18344a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_55%_95%_at_30%_10%,#000_70%,transparent_100%)]'></div>{' '}
-
       <SectionContainer>
         <div className='flex flex-col items-center lg:flex-row'>
-
           {/* Left Column */}
           <div className='mb-12 w-full lg:mb-0 lg:w-1/2 lg:pr-16'>
             <p className='mb-3 text-lg font-semibold text-blue-300 md:text-xl lg:text-[#18344a]/80'>
@@ -49,7 +47,7 @@ const AboutSection: React.FC = () => {
                   'lg:bg-[#3a5265] lg:text-white lg:hover:bg-[#1e3344]/20',
                   'text-base font-semibold',
                   'shadow-lg transition duration-300',
-                  'lg:border-2 border border-white/30',
+                  'border border-white/30 lg:border-2',
                   'hover:border-white/70 lg:hover:border-[#1e3344]/50'
                 )}
               >

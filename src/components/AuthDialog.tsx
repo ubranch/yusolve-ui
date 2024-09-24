@@ -211,9 +211,7 @@ export function AuthDialog({
           <Input
             id='password'
             type='password'
-            placeholder={
-              isSignIn ? 'Enter your password' : 'Create a password'
-            }
+            placeholder={isSignIn ? 'Enter your password' : 'Create a password'}
             className={cn(inputClasses, 'mt-1')}
           />
         </div>

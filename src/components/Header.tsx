@@ -195,7 +195,7 @@ const Header: React.FC = () => {
       </SectionContainer>
 
       {/* Mobile menu */}
-      <SectionContainer className="lg:hidden">
+      <SectionContainer className='lg:hidden'>
         <div
           ref={mobileMenuRef}
           className={cn(
