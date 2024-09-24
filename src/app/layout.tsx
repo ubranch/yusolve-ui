@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import "./globals.css";
-import React from "react";
+import './globals.css';
+import React from 'react';
 
 const sfProDisplay = localFont({
   src: [
@@ -25,8 +25,8 @@ const sfProDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "YUSOLVE - Drive Upstream Solutions",
-  description: "Drive Upstream Solutions",
+  title: 'YUSOLVE - Drive Upstream Solutions',
+  description: 'Drive Upstream Solutions',
 };
 
 export default function RootLayout({
@@ -35,10 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${sfProDisplay.variable} font-sans`}>
-        {children}
-      </body>
+    <html lang='en'>
+      <body className={`${sfProDisplay.variable} font-sans`}>{children}</body>
     </html>
   );
 }

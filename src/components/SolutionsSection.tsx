@@ -1,49 +1,51 @@
-"use client";
+'use client';
 import React from 'react';
-import { FocusCards } from "@/components/ui/focus-cards";
-import { motion } from "framer-motion";
-import { LampContainer } from "@/components/ui/lamp";
+import { FocusCards } from '@/components/ui/focus-cards';
+import { motion } from 'framer-motion';
+import { LampContainer } from '@/components/ui/lamp';
 
 const SolutionsSection: React.FC = () => {
   const cards = [
     {
-      title: "DOT Safety Compliance",
-      src: "/images/solutions/service-DOT.jpg",
-      href: "/dot-safety-compliance/"
+      title: 'DOT Safety Compliance',
+      src: '/images/solutions/service-DOT.jpg',
+      href: '/dot-safety-compliance/',
     },
     {
-      title: "Permits & Tax Services",
-      src: "/images/solutions/service-permits.jpg",
-      href: "/permits/"
+      title: 'Permits & Tax Services',
+      src: '/images/solutions/service-permits.jpg',
+      href: '/permits/',
     },
     {
-      title: "Freight Planning",
-      src: "/images/solutions/service-freight-planning.jpg",
-      href: "/freight-planning/"
+      title: 'Freight Planning',
+      src: '/images/solutions/service-freight-planning.jpg',
+      href: '/freight-planning/',
     },
     {
-      title: "Factoring",
-      src: "/images/solutions/service-factoring.jpg",
-      href: "/factoring/"
+      title: 'Factoring',
+      src: '/images/solutions/service-factoring.jpg',
+      href: '/factoring/',
     },
     {
-      title: "Insurance",
-      src: "/images/solutions/service-insurance.jpg",
-      href: "/insurance-coverage/"
+      title: 'Insurance',
+      src: '/images/solutions/service-insurance.jpg',
+      href: '/insurance-coverage/',
     },
     {
-      title: "ELD",
-      src: "/images/solutions/service-eld.jpg",
-      href: "/eld-system/"
-    }
+      title: 'ELD',
+      src: '/images/solutions/service-eld.jpg',
+      href: '/eld-system/',
+    },
   ];
 
   return (
-    <section id="services-section" className="relative bg-white lg:bg-[#18344a]">
-
+    <section
+      id='services-section'
+      className='relative bg-white lg:bg-[#18344a]'
+    >
       <LampContainer
-        className="pt-40 sm:pt-44 md:pt-30 lg:pt-52 pb-20 sm:pb-32 md:pb-40 lg:pb-52"
-        bgColor="bg-white lg:bg-[#18344a]"
+        className='md:pt-30 pb-20 pt-40 sm:pb-32 sm:pt-44 md:pb-40 lg:pb-52 lg:pt-52'
+        bgColor='bg-white lg:bg-[#18344a]'
       >
         <motion.h2
           initial={{ opacity: 0, y: 100 }}
@@ -51,16 +53,16 @@ const SolutionsSection: React.FC = () => {
           transition={{
             delay: 0.2,
             duration: 0.6,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
-          className="mt-0 bg-gradient-to-br from-[#18344a] to-cyan-600 lg:from-slate-100 lg:to-cyan-600 pb-4 bg-clip-text text-center text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-medium tracking-tight text-transparent max-w-[90%] mx-auto"
+          className='mx-auto mt-0 max-w-[90%] bg-gradient-to-br from-[#18344a] to-cyan-600 bg-clip-text pb-4 text-center text-5xl font-medium tracking-tight text-transparent sm:text-6xl md:text-6xl lg:from-slate-100 lg:to-cyan-600 lg:text-7xl'
         >
           Our Solutions
         </motion.h2>
       </LampContainer>
 
-      <div className="relative z-10 w-[95%] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24 lg:pb-32 -mt-32 sm:-mt-40 md:-mt-48 lg:-mt-56">
-        <div className="w-full mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+      <div className='relative z-10 mx-auto -mt-32 w-[95%] max-w-[1400px] px-4 pb-20 sm:-mt-40 sm:px-6 sm:pb-24 md:-mt-48 lg:-mt-56 lg:px-8 lg:pb-32'>
+        <div className='mt-8 w-full sm:mt-12 md:mt-16 lg:mt-20'>
           <FocusCards cards={cards} />
         </div>
       </div>

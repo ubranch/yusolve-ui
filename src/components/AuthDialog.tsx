@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogTrigger,
   DialogClose,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { PersonIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
 
@@ -19,8 +25,18 @@ interface AuthDialogProps {
 }
 
 const topCountries = [
-  { code: 'US', name: 'United States', phoneCode: '+1', template: '(###) ###-####' },
-  { code: 'GB', name: 'United Kingdom', phoneCode: '+44', template: '#### ######' },
+  {
+    code: 'US',
+    name: 'United States',
+    phoneCode: '+1',
+    template: '(###) ###-####',
+  },
+  {
+    code: 'GB',
+    name: 'United Kingdom',
+    phoneCode: '+44',
+    template: '#### ######',
+  },
   { code: 'CA', name: 'Canada', phoneCode: '+1', template: '(###) ###-####' },
   { code: 'AU', name: 'Australia', phoneCode: '+61', template: '### ### ###' },
   { code: 'DE', name: 'Germany', phoneCode: '+49', template: '### #######' },
@@ -29,12 +45,23 @@ const topCountries = [
   { code: 'IN', name: 'India', phoneCode: '+91', template: '##### #####' },
   { code: 'CN', name: 'China', phoneCode: '+86', template: '### #### ####' },
   { code: 'BR', name: 'Brazil', phoneCode: '+55', template: '## #####-####' },
-  { code: 'UZ', name: 'Uzbekistan', phoneCode: '+998', template: '## ### ## ##' },
+  {
+    code: 'UZ',
+    name: 'Uzbekistan',
+    phoneCode: '+998',
+    template: '## ### ## ##',
+  },
 ];
 
-export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthDialogProps>) {
+export function AuthDialog({
+  isScrolled,
+  buttonType,
+  className,
+}: Readonly<AuthDialogProps>) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDialog, setActiveDialog] = useState<'signin' | 'signup'>(buttonType);
+  const [activeDialog, setActiveDialog] = useState<'signin' | 'signup'>(
+    buttonType
+  );
   const [selectedCountry, setSelectedCountry] = useState(topCountries[0]);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [key, setKey] = useState(0);
@@ -47,14 +74,14 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
   const switchDialog = () => {
     setIsOpen(false);
     setTimeout(() => {
-      setActiveDialog((prev) => prev === 'signin' ? 'signup' : 'signin');
-      setKey(prevKey => prevKey + 1);
+      setActiveDialog((prev) => (prev === 'signin' ? 'signup' : 'signin'));
+      setKey((prevKey) => prevKey + 1);
       setIsOpen(true);
     }, 150);
   };
 
   const handleCountryChange = (value: string) => {
-    const country = topCountries.find(c => c.code === value);
+    const country = topCountries.find((c) => c.code === value);
     if (country) {
       setSelectedCountry(country);
       setPhoneNumber('');
@@ -82,7 +109,9 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
 
   const isValidPhoneNumber = (phone: string) => {
     const digitsOnly = phone.replace(/\D/g, '');
-    return digitsOnly.length === selectedCountry.template.replace(/\D/g, '').length;
+    return (
+      digitsOnly.length === selectedCountry.template.replace(/\D/g, '').length
+    );
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -95,33 +124,52 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
     console.log('Form submitted', { country: selectedCountry, phoneNumber });
   };
 
-  const inputClasses = "bg-white/10 border-white/20 text-white placeholder-white/50 focus:border-white/40 focus:ring-white/20";
+  const inputClasses =
+    'bg-white/10 border-white/20 text-white placeholder-white/50 focus:border-white/40 focus:ring-white/20';
 
   const dialogContent = (title: string, isSignIn: boolean) => (
     <>
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl sm:text-2xl font-bold text-white">{title}</h2>
+      <div className='mb-6 flex items-center justify-between'>
+        <h2 className='text-xl font-bold text-white sm:text-2xl'>{title}</h2>
         <DialogClose />
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="space-y-4">
+        <div className='space-y-4'>
           {!isSignIn && (
-            <div className="space-y-2">
-              <Label htmlFor="name" className="text-white">Name</Label>
-              <Input id="name" placeholder="Enter your name" className={inputClasses} />
+            <div className='space-y-2'>
+              <Label htmlFor='name' className='text-white'>
+                Name
+              </Label>
+              <Input
+                id='name'
+                placeholder='Enter your name'
+                className={inputClasses}
+              />
             </div>
           )}
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-white">Email</Label>
-            <Input id="email" type="email" placeholder="Enter your email" className={inputClasses} />
+          <div className='space-y-2'>
+            <Label htmlFor='email' className='text-white'>
+              Email
+            </Label>
+            <Input
+              id='email'
+              type='email'
+              placeholder='Enter your email'
+              className={inputClasses}
+            />
           </div>
           {!isSignIn && (
             <>
-              <div className="space-y-2">
-                <Label htmlFor="country" className="text-white">Country</Label>
-                <Select onValueChange={handleCountryChange} defaultValue={selectedCountry.code}>
+              <div className='space-y-2'>
+                <Label htmlFor='country' className='text-white'>
+                  Country
+                </Label>
+                <Select
+                  onValueChange={handleCountryChange}
+                  defaultValue={selectedCountry.code}
+                >
                   <SelectTrigger className={inputClasses}>
-                    <SelectValue placeholder="Select country" />
+                    <SelectValue placeholder='Select country' />
                   </SelectTrigger>
                   <SelectContent>
                     {topCountries.map((country) => (
@@ -132,40 +180,61 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
                   </SelectContent>
                 </Select>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-white">Phone Number</Label>
-                <div className="flex">
-                  <span className={cn(inputClasses, "flex items-center px-3 border-r-0 rounded-r-none")}>
+              <div className='space-y-2'>
+                <Label htmlFor='phone' className='text-white'>
+                  Phone Number
+                </Label>
+                <div className='flex'>
+                  <span
+                    className={cn(
+                      inputClasses,
+                      'flex items-center rounded-r-none border-r-0 px-3'
+                    )}
+                  >
                     {selectedCountry.phoneCode}
                   </span>
                   <Input
-                    id="phone"
-                    type="tel"
+                    id='phone'
+                    type='tel'
                     value={phoneNumber}
                     onChange={handlePhoneNumberChange}
                     placeholder={selectedCountry.template.replace(/#/g, '0')}
-                    className={cn(inputClasses, "rounded-l-none")}
+                    className={cn(inputClasses, 'rounded-l-none')}
                   />
                 </div>
               </div>
             </>
           )}
-          <div className="space-y-2">
-            <Label htmlFor="password" className="text-white">Password</Label>
-            <Input id="password" type="password" placeholder={isSignIn ? "Enter your password" : "Create a password"} className={inputClasses} />
+          <div className='space-y-2'>
+            <Label htmlFor='password' className='text-white'>
+              Password
+            </Label>
+            <Input
+              id='password'
+              type='password'
+              placeholder={
+                isSignIn ? 'Enter your password' : 'Create a password'
+              }
+              className={inputClasses}
+            />
           </div>
-          <Button type="submit" className="w-full bg-white text-[#18344a] hover:bg-white/90">
-            {isSignIn ? "Sign In" : "Sign Up"}
+          <Button
+            type='submit'
+            className='w-full bg-white text-[#18344a] hover:bg-white/90'
+          >
+            {isSignIn ? 'Sign In' : 'Sign Up'}
           </Button>
         </div>
       </form>
-      <div className="mt-6 text-center">
+      <div className='mt-6 text-center'>
         <Button
-          variant="linkHover2"
-          className="text-blue-400 hover:text-blue-300 p-0"
+          variant='linkHover2'
+          className='p-0 text-blue-400 hover:text-blue-300'
           onClick={switchDialog}
         >
-          {isSignIn ? "Don't have an account? Sign Up" : "Already have an account? Sign In"}
+          {isSignIn
+            ? "Don't have an account? Sign Up"
+            : 'Already have an account? Sign In'}
         </Button>
       </div>
     </>
@@ -177,34 +246,37 @@ export function AuthDialog({ isScrolled, buttonType, className }: Readonly<AuthD
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button
-          variant={isScrolled ? "default" : "outline"}
-          size="default"
+          variant={isScrolled ? 'default' : 'outline'}
+          size='default'
           className={cn(
-            "transition duration-300",
+            'transition duration-300',
             isScrolled
-              ? "bg-[#18344a] text-white hover:bg-[#224b6b]"
-              : "border-white/30 text-white hover:bg-white/20",
+              ? 'bg-[#18344a] text-white hover:bg-[#224b6b]'
+              : 'border-white/30 text-white hover:bg-white/20',
             className
           )}
           onClick={openDialog}
         >
-          <PersonIcon className="mr-2 h-4 w-4" />
+          <PersonIcon className='mr-2 h-4 w-4' />
           {buttonText}
         </Button>
       </DialogTrigger>
       <DialogContent
         key={key}
         className={cn(
-          "w-[90%] max-w-[400px] p-4 sm:p-6 bg-[#18344a]/60 backdrop-blur-xl border border-white/30 rounded-xl shadow-xl",
-          "transition-all duration-150", // Reduced from 300ms to 150ms
-          "data-[state=open]:animate-in data-[state=closed]:animate-out",
-          "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-          "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
-          "data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]",
-          "data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]"
+          'w-[90%] max-w-[400px] rounded-xl border border-white/30 bg-[#18344a]/60 p-4 shadow-xl backdrop-blur-xl sm:p-6',
+          'transition-all duration-150', // Reduced from 300ms to 150ms
+          'data-[state=open]:animate-in data-[state=closed]:animate-out',
+          'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+          'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
+          'data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]',
+          'data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]'
         )}
       >
-        {dialogContent(activeDialog === 'signin' ? "Sign In" : "Sign Up", activeDialog === 'signin')}
+        {dialogContent(
+          activeDialog === 'signin' ? 'Sign In' : 'Sign Up',
+          activeDialog === 'signin'
+        )}
       </DialogContent>
     </Dialog>
   );

@@ -1,45 +1,54 @@
-'use client'
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="two-col-section" className="py-20 lg:py-28 bg-[#18344a] lg:bg-white relative">
+    <section
+      id='two-col-section'
+      className='relative bg-[#18344a] py-20 lg:bg-white lg:py-28'
+    >
       {/* Grid effect background */}
-<div className="absolute inset-0 z-100 h-full w-full bg-transparent opacity-10 bg-[linear-gradient(to_right,#18344a_1px,transparent_1px),linear-gradient(to_bottom,#18344a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_90%_90%_at_50%_0%,#000_70%,transparent_100%)] backdrop-blur-[1px]"></div>      <div className="w-[95%] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center">
+      <div className='z-100 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,#18344a_1px,transparent_1px),linear-gradient(to_bottom,#18344a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_90%_90%_at_50%_0%,#000_70%,transparent_100%)]'></div>{' '}
+      <div className='mx-auto w-[95%] max-w-[1400px] px-4 sm:px-6 lg:px-8'>
+        <div className='flex flex-col items-center lg:flex-row'>
           {/* Left Column */}
-          <div className="w-full lg:w-1/2 lg:pr-16 mb-12 lg:mb-0">
-            <p className="text-lg md:text-xl font-semibold text-blue-300 lg:text-[#18344a]/80 mb-3">
+          <div className='mb-12 w-full lg:mb-0 lg:w-1/2 lg:pr-16'>
+            <p className='mb-3 text-lg font-semibold text-blue-300 md:text-xl lg:text-[#18344a]/80'>
               Let Us Help You Grow Your Business!
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-white lg:text-[#18344a]">
+            <h1 className='mb-2 text-4xl font-bold text-white md:text-5xl lg:text-6xl lg:text-[#18344a]'>
               YUSOLVE
             </h1>
-            <h3 className="text-2xl md:text-3xl lg:text-3xl font-semibold mb-6 text-blue-100 lg:text-[#18344a]/90">
+            <h3 className='mb-6 text-2xl font-semibold text-blue-100 md:text-3xl lg:text-3xl lg:text-[#18344a]/90'>
               Is Always Here to Support You
             </h3>
-            <p className="text-lg md:text-xl text-gray-300 lg:text-[#18344a]/70 mb-6">
-              You are an ambitious and independent entrepreneur, on the road to a better life.
+            <p className='mb-6 text-lg text-gray-300 md:text-xl lg:text-[#18344a]/70'>
+              You are an ambitious and independent entrepreneur, on the road to
+              a better life.
             </p>
-            <p className="text-lg md:text-xl text-gray-300 lg:text-[#18344a]/70 mb-8">
-              Everything, from the food we eat, to the fuel we use to power our homes, cars and businesses, as well as critical medical supplies and equipment, are transported across the country and beyond by a group of hard working individuals like you, who spend countless days and nights on the road.
+            <p className='mb-8 text-lg text-gray-300 md:text-xl lg:text-[#18344a]/70'>
+              Everything, from the food we eat, to the fuel we use to power our
+              homes, cars and businesses, as well as critical medical supplies
+              and equipment, are transported across the country and beyond by a
+              group of hard working individuals like you, who spend countless
+              days and nights on the road.
             </p>
-            <Link href="/about-us" passHref>
+            <Link href='/about-us' passHref>
               <Button
-                variant="default"
-                size="lg"
+                variant='default'
+                size='lg'
                 className={cn(
-                  "bg-white/10 hover:bg-white/20 text-white",
-                  "lg:bg-[#18344a] lg:hover:bg-[#18344a]/90 lg:text-white",
-                  "text-base font-semibold",
-                  "transition duration-300 shadow-lg",
-                  "backdrop-blur-md border border-white/50",
-                  "lg:border-white/20",
-                  "hover:border-white/70 lg:hover:border-white/40"
+                  'bg-white/10 text-white hover:bg-white/20',
+                  'lg:bg-[#18344a] lg:text-white lg:hover:bg-[#18344a]/90',
+                  'text-base font-semibold',
+                  'shadow-lg transition duration-300',
+                  'border border-white/50 backdrop-blur-md',
+                  'lg:border-white/20',
+                  'hover:border-white/70 lg:hover:border-white/40'
                 )}
               >
                 Learn More
@@ -48,26 +57,26 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Right Column */}
-          <div className="w-full lg:w-1/2 mt-0 lg:mt-0">
-            <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] md:aspect-[9/5] lg:aspect-[16/10] rounded-[2rem] overflow-hidden shadow-lg">
+          <div className='mt-0 w-full lg:mt-0 lg:w-1/2'>
+            <div className='relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-lg sm:aspect-[3/2] md:aspect-[9/5] lg:aspect-[16/10]'>
               <Image
-                src="/images/hp-img.jpg"
-                alt="YUSOLVE"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-[2rem]"
+                src='/images/hp-img.jpg'
+                alt='YUSOLVE'
+                layout='fill'
+                objectFit='cover'
+                className='rounded-[2rem]'
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 onError={(e) => {
-                  console.error("Error loading image:", e);
+                  console.error('Error loading image:', e);
                   // Fallback to a placeholder or default image
-                  e.currentTarget.src = "/images/placeholder.jpg";
+                  e.currentTarget.src = '/images/placeholder.jpg';
                 }}
               />
               {/* Overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#18344a]/30 to-transparent mix-blend-multiply pointer-events-none"></div>
+              <div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-[#18344a]/30 to-transparent mix-blend-multiply'></div>
               {/* Highlights */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50 mix-blend-overlay pointer-events-none"></div>
+              <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50 mix-blend-overlay'></div>
             </div>
           </div>
         </div>

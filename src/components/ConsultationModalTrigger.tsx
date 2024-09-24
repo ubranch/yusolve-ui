@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import ConsultationModal from '@/components/ConsultationModal';
 
 export function ConsultationModalTrigger() {
@@ -10,14 +10,17 @@ export function ConsultationModalTrigger() {
   return (
     <>
       <Button
-        variant="default"
-        size="lg"
-        className="bg-white/10 backdrop-blur-md border border-white/30 text-white/80 hover:bg-white/20 text-base font-semibold shadow-lg"
+        variant='default'
+        size='lg'
+        className='border border-white/30 bg-white/10 text-base font-semibold text-white/80 shadow-lg backdrop-blur-md hover:bg-white/20'
         onClick={() => setIsModalOpen(true)}
       >
         GET A FREE CONSULTATION
       </Button>
-      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ConsultationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   );
 }
