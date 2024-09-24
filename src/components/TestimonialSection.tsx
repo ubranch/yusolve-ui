@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import clsx from 'clsx';
 import SectionContainer from '@/components/SectionContainer';
 
 const testimonials = [
