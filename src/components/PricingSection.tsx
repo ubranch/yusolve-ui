@@ -2,21 +2,20 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
 import { CheckIcon } from '@radix-ui/react-icons';
 import NumberTicker from '@/components/ui/number-ticker';
 import SectionContainer from '@/components/SectionContainer';
 
 const plans = [
   {
-    name: 'SUBSCRIPTION 1',
+    name: 'Basic',
     desc: 'Basic package for small trucking businesses.',
     price: 500,
     isMostPop: false,
     features: ['HR / Hiring', 'Safety', 'Insurance', 'Equipment'],
   },
   {
-    name: 'SUBSCRIPTION 2',
+    name: 'Advanced',
     desc: 'Advanced package for growing companies.',
     price: 1000,
     isMostPop: true,
@@ -29,7 +28,7 @@ const plans = [
     ],
   },
   {
-    name: 'SUBSCRIPTION 3',
+    name: 'Enterprise',
     desc: 'Premium package for large trucking fleets.',
     price: 'Custom',
     isMostPop: false,
@@ -46,36 +45,21 @@ const PricingSection: React.FC = () => {
   return (
     <section className='relative overflow-hidden bg-[#18344a] py-16'>
       {/* Grid effect background */}
-      <div className='-z-1 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_60%_80%_at_50%_0%,#000_70%,transparent_110%)]'></div>
+      <div className='-z-1 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_60%_80%_at_50%_0%,#000_70%,transparent_110%)]'></div>
 
       <SectionContainer>
         <div className='relative mx-auto max-w-xl text-center'>
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-            className='text-4xl font-semibold tracking-tighter text-gray-300 sm:text-6xl'
-          >
+          <h3 className='text-4xl font-semibold tracking-tighter text-gray-300 sm:text-6xl'>
             Price plans
-          </motion.h3>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className='mt-3 text-2xl font-normal text-white/40'
-          >
+          </h3>
+          <div className='mt-3 text-2xl font-normal text-white/40'>
             <p>
               We handle all your compliance requirements, allowing you to
               concentrate on expanding your business.
             </p>
-          </motion.div>
+          </div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className='mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3'
-        >
+        <div className='mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
           {plans.map((item, idx) => (
             <div
               key={item.name}
@@ -83,24 +67,24 @@ const PricingSection: React.FC = () => {
                 'relative flex transform-gpu flex-col rounded-xl',
                 'bg-white/5 backdrop-blur-md',
                 'shadow-lg transition-all duration-300',
-                'border border-white/30 relative transform-gpu rounded-2xl border border-white/30 bg-white/5 backdrop-blur-md p-6 shadow-xl [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
+                'relative transform-gpu rounded-2xl border border-white/30 bg-white/5 p-6 shadow-xl backdrop-blur-md [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
                 item.isMostPop && 'border-2 border-white/50',
                 idx === plans.length - 1 && 'overflow-hidden'
               )}
             >
               {item.isMostPop ? (
-                <span className='absolute -top-5 left-0 right-0 mx-auto w-32 animate-background-shine rounded-full border-2 border-white/40 bg-[#18344a]/90 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(24,52,74,0.3),rgba(255,255,255,0))] px-3 py-2 text-center text-sm font-semibold text-white/90 shadow-md'>
-                  Most popular
+                <span className='absolute -top-5 left-0 right-0 mx-auto w-auto max-w-[200px] animate-shimmer rounded-full border-2 border-white/30 bg-[linear-gradient(110deg,rgba(255,255,255,0.1),45%,rgba(255,255,255,0.3),55%,rgba(255,255,255,0.1))] bg-[length:200%_100%] px-3 py-2 text-center text-sm font-semibold text-white shadow-md backdrop-blur-sm [--shimmer-width:50%]'>
+                  ✨ Most popular
                 </span>
               ) : null}
               <div className='space-y-4 p-8'>
                 <div
                   className={cn(
-                    'space-y-4 border-b border-white/10 pb-8',
+                    'space-y-4 border-b-2 border-white/10 pb-8',
                     idx === plans.length - 1 && 'relative z-10'
                   )}
                 >
-                  <span className='font-geist text-3xl font-black tracking-normal text-blue-300/50'>
+                  <span className='font-geist text-4xl font-black tracking-normal text-blue-300/50'>
                     {item.name}
                   </span>
                   <div className='text-3xl font-semibold text-gray-200'>
@@ -149,7 +133,7 @@ const PricingSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </SectionContainer>
     </section>
   );

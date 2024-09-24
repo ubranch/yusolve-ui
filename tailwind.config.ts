@@ -92,7 +92,7 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         shine: 'shine 8s ease-in-out infinite',
-        'background-shine': 'background-shine 3s linear infinite',
+        'background-shine': 'background-shine 8s linear infinite',
         shimmer: 'shimmer 8s infinite',
       },
     },

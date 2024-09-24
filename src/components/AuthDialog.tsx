@@ -245,7 +245,7 @@ export function AuthDialog({
           variant={isScrolled ? 'default' : 'outline'}
           size='default'
           className={cn(
-            'transition duration-300 shadow-lg',
+            'shadow-lg transition duration-300',
             isScrolled
               ? 'bg-[#18344a] text-white hover:bg-[#224b6b]'
               : 'border-white/30 text-white hover:bg-white/20',

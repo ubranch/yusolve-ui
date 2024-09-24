@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
+import SectionContainer from '@/components/SectionContainer';
 
 const testimonials = [
   [
@@ -86,14 +87,15 @@ export default function TestimonialSection() {
       aria-label='What our customers are saying'
       className='z-1 bg-page-gradient relative bg-[#18344a] py-20 sm:py-16'
     >
-      <div className='-z-1 absolute inset-0 h-[600px] w-full bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] opacity-5 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]'></div>
+      {/* Grid effect background */}
+      <div className='-z-1 absolute inset-0 h-[600px] w-full bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] opacity-15 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]'></div>
 
       <div className='absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 bg-[radial-gradient(ellipse_30%_80%_at_50%_-20%,rgba(255,255,255,0.23),rgba(255,255,255,0))] opacity-20'></div>
 
       <div className='absolute inset-x-0 -top-10 z-10 m-auto h-[27rem] max-w-lg opacity-50 sm:h-64 sm:max-w-7xl'></div>
-      <Container>
+      <SectionContainer>
         <div className='mx-auto max-w-2xl md:text-center'>
-          <h2 className='font-geist text-5xl font-medium tracking-tighter text-gray-100 sm:text-6xl'>
+          <h2 className='font-geist text-5xl font-bold tracking-tighter text-gray-100 sm:text-6xl'>
             <span className='bg-gradient-to-br from-[#4975b1] via-[#28557b] to-[#68a7fd] bg-clip-text text-transparent'>
               Loved
             </span>{' '}
@@ -114,8 +116,8 @@ export default function TestimonialSection() {
               <ul role='list' className='flex flex-col gap-y-6 sm:gap-y-8'>
                 {column.map((testimonial, testimonialIndex) => (
                   <li key={testimonialIndex}>
-                    <figure className='relative transform-gpu rounded-2xl border border-white/30 bg-white/5 backdrop-blur-md p-6 shadow-xl [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]'>
-                      <QuoteIcon className='absolute left-6 top-6 fill-white/10' />
+                    <figure className='relative transform-gpu rounded-2xl border border-white/30 bg-white/5 p-6 shadow-xl backdrop-blur-md [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]'>
+                      <QuoteIcon className='absolute left-6 top-6 fill-white/5' />
                       <blockquote className='relative'>
                         <p className='text-lg tracking-tight text-gray-100'>
                           {testimonial.content}
@@ -134,7 +136,7 @@ export default function TestimonialSection() {
                           <Image
                             className='h-14 w-14 object-cover'
                             src={testimonial.author.image}
-                            alt=''
+                            alt='author'
                             width={56}
                             height={56}
                           />
@@ -147,19 +149,7 @@ export default function TestimonialSection() {
             </li>
           ))}
         </ul>
-      </Container>
+      </SectionContainer>
     </section>
-  );
-}
-
-export function Container({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<'div'>) {
-  return (
-    <div
-      className={clsx('mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', className)}
-      {...props}
-    />
   );
 }

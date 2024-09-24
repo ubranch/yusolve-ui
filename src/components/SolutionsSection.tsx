@@ -50,13 +50,13 @@ const SolutionsSection: React.FC = () => {
       >
         <motion.h2
           initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: -10 }}
           transition={{
             delay: 0.2,
             duration: 0.6,
             ease: 'easeInOut',
           }}
-          className='mx-auto mt-0 max-w-[90%] bg-gradient-to-br from-[#18344a] to-cyan-600 bg-clip-text pb-4 text-center text-5xl font-medium tracking-tight text-transparent sm:text-6xl md:text-6xl lg:from-slate-100 lg:to-cyan-600 lg:text-7xl'
+          className='mx-auto mt-0 max-w-[90%] bg-gradient-to-br from-[#18344a] to-cyan-600 bg-clip-text pb-4 text-center text-5xl font-bold tracking-tight text-transparent opacity-50 sm:text-6xl md:text-6xl lg:from-slate-100 lg:to-cyan-600 lg:text-7xl'
         >
           Our Solutions
         </motion.h2>
