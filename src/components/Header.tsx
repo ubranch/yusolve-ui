@@ -52,9 +52,9 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className='fixed left-1/2 top-6 z-30 w-full -translate-x-1/2 transform font-sans font-medium'>
+    <header className='fixed left-1/2 top-6 z-30 w-full -translate-x-1/2 transform font-sans font-medium '>
       <SectionContainer>
-        <div className='rounded-2xl border border-white/30 bg-white/5 px-4 py-4 backdrop-blur-md transition-all duration-300 sm:px-6 lg:px-8'>
+        <div className='rounded-2xl border border-white/30 bg-white/5 px-4 py-4 backdrop-blur-md transition-all duration-300 sm:px-6 lg:px-8 shadow-lg'>
           <div className='flex items-center justify-between'>
             {/* Logo */}
             <div className='flex-shrink-0'>

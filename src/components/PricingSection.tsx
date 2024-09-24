@@ -83,7 +83,7 @@ const PricingSection: React.FC = () => {
                 'relative flex transform-gpu flex-col rounded-xl',
                 'bg-white/5 backdrop-blur-md',
                 'shadow-lg transition-all duration-300',
-                'border border-white/30',
+                'border border-white/30 relative transform-gpu rounded-2xl border border-white/30 bg-white/5 backdrop-blur-md p-6 shadow-xl [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
                 item.isMostPop && 'border-2 border-white/50',
                 idx === plans.length - 1 && 'overflow-hidden'
               )}
@@ -108,6 +108,7 @@ const PricingSection: React.FC = () => {
                       <NumberTicker
                         value={item.price}
                         type='currency'
+                        delay={0.1}
                         className='text-3xl font-semibold text-gray-200'
                       />
                     ) : (
