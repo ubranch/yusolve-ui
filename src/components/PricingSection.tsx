@@ -49,7 +49,7 @@ const PricingSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-3 max-w-xl text-white/40 font-geist font-normal"
+            className="mt-3 max-w-xl text-white/40 font-geist font-normal text-2xl"
           >
             <p>
               We handle all your compliance requirements, allowing you to concentrate on expanding your business.
@@ -73,7 +73,7 @@ const PricingSection: React.FC = () => {
               )}
             >
               {item.isMostPop ? (
-                <span className="w-32 absolute -top-5 left-0 right-0 mx-auto px-3 py-2 rounded-full border shadow-md bg-[#18344a]/50 text-white/90 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(24,52,74,0.3),rgba(255,255,255,0))] animate-background-shine text-center text-sm font-semibold">
+                <span className="w-32 absolute -top-5 left-0 right-0 mx-auto px-3 py-2 rounded-full border border-white/40 shadow-md bg-[#18344a]/90 text-white/90 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(24,52,74,0.3),rgba(255,255,255,0))] animate-background-shine text-center text-sm font-semibold">
                   Most popular
                 </span>
               ) : null}
@@ -82,7 +82,7 @@ const PricingSection: React.FC = () => {
                   "space-y-4 border-b border-white/10 pb-8",
                   idx === plans.length - 1 && "relative z-10"
                 )}>
-                  <span className="text-blue-300 font-normal font-geist tracking-tight">{item.name}</span>
+                  <span className="text-3xl text-blue-300/50 font-normal font-geist tracking-tight">{item.name}</span>
                   <div className="text-gray-200 text-3xl font-semibold">
                     {typeof item.price === 'number' ? `$${item.price}` : item.price}{" "}
                     <span className="text-xl text-gray-600 font-normal">/mo</span>

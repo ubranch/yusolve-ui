@@ -7,8 +7,9 @@ import { cn } from '@/lib/utils';
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="two-col-section" className="py-20 lg:py-28 bg-[#18344a] lg:bg-white">
-      <div className="w-[95%] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="two-col-section" className="py-20 lg:py-28 bg-[#18344a] lg:bg-white relative">
+      {/* Grid effect background */}
+<div className="absolute inset-0 z-100 h-full w-full bg-transparent opacity-10 bg-[linear-gradient(to_right,#18344a_1px,transparent_1px),linear-gradient(to_bottom,#18344a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_90%_90%_at_50%_0%,#000_70%,transparent_100%)] backdrop-blur-[1px]"></div>      <div className="w-[95%] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left Column */}
           <div className="w-full lg:w-1/2 lg:pr-16 mb-12 lg:mb-0">

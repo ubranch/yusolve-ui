@@ -23,10 +23,10 @@ export default function Hero() {
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <div className="flex flex-col items-center justify-center text-center">
-          <h2 className="mx-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
+          <h2 className="mx-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white/70 mb-3">
             You Keep Our Nation Running
           </h2>
-          <p className="mx-2 text-lg md:text-lg lg:text-xl text-white mb-5 max-w-xl">
+          <p className="mx-2 text-white/40 md:text-lg lg:text-xl text-white mb-5 max-w-xl">
             Encouraging and supporting transportation entrepreneurs, just like you for over 20 years!
           </p>
           <ConsultationModalTrigger />
