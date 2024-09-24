@@ -3,6 +3,7 @@ import React from 'react';
 import { FocusCards } from '@/components/ui/focus-cards';
 import { motion } from 'framer-motion';
 import { LampContainer } from '@/components/ui/lamp';
+import SectionContainer from '@/components/SectionContainer';
 
 const SolutionsSection: React.FC = () => {
   const cards = [
@@ -61,11 +62,11 @@ const SolutionsSection: React.FC = () => {
         </motion.h2>
       </LampContainer>
 
-      <div className='relative z-10 mx-auto -mt-32 w-[95%] max-w-[1400px] px-4 pb-20 sm:-mt-40 sm:px-6 sm:pb-24 md:-mt-48 lg:-mt-56 lg:px-8 lg:pb-32'>
+      <SectionContainer className='relative z-10 -mt-32 pb-20 sm:-mt-40 sm:pb-24 md:-mt-48 lg:-mt-56 lg:pb-32'>
         <div className='mt-8 w-full sm:mt-12 md:mt-16 lg:mt-20'>
           <FocusCards cards={cards} />
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

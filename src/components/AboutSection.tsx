@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import SectionContainer from '@/components/SectionContainer';
 
 const AboutSection: React.FC = () => {
   return (
@@ -12,9 +13,11 @@ const AboutSection: React.FC = () => {
       className='relative bg-[#18344a] py-20 lg:bg-white lg:py-28'
     >
       {/* Grid effect background */}
-      <div className='z-100 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,#18344a_1px,transparent_1px),linear-gradient(to_bottom,#18344a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_90%_90%_at_50%_0%,#000_70%,transparent_100%)]'></div>{' '}
-      <div className='mx-auto w-[95%] max-w-[1400px] px-4 sm:px-6 lg:px-8'>
+      <div className='z-100 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,#18344a_1px,transparent_1px),linear-gradient(to_bottom,#18344a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_55%_95%_at_30%_10%,#000_70%,transparent_100%)]'></div>{' '}
+
+      <SectionContainer>
         <div className='flex flex-col items-center lg:flex-row'>
+
           {/* Left Column */}
           <div className='mb-12 w-full lg:mb-0 lg:w-1/2 lg:pr-16'>
             <p className='mb-3 text-lg font-semibold text-blue-300 md:text-xl lg:text-[#18344a]/80'>
@@ -42,13 +45,12 @@ const AboutSection: React.FC = () => {
                 variant='default'
                 size='lg'
                 className={cn(
-                  'bg-white/10 text-white hover:bg-white/20',
-                  'lg:bg-[#18344a] lg:text-white lg:hover:bg-[#18344a]/90',
+                  'bg-[#3a5265]/50 text-white hover:bg-white/20',
+                  'lg:bg-[#3a5265] lg:text-white lg:hover:bg-[#1e3344]/20',
                   'text-base font-semibold',
                   'shadow-lg transition duration-300',
-                  'border border-white/50 backdrop-blur-md',
-                  'lg:border-white/20',
-                  'hover:border-white/70 lg:hover:border-white/40'
+                  'lg:border-2 border border-white/30',
+                  'hover:border-white/70 lg:hover:border-[#1e3344]/50'
                 )}
               >
                 Learn More
@@ -69,7 +71,6 @@ const AboutSection: React.FC = () => {
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 onError={(e) => {
                   console.error('Error loading image:', e);
-                  // Fallback to a placeholder or default image
                   e.currentTarget.src = '/images/placeholder.jpg';
                 }}
               />
@@ -80,7 +81,7 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };

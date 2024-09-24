@@ -13,6 +13,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'simplexgroup.net',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 };

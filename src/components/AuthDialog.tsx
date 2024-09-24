@@ -129,107 +129,105 @@ export function AuthDialog({
 
   const dialogContent = (title: string, isSignIn: boolean) => (
     <>
-      <div className='mb-6 flex items-center justify-between'>
-        <h2 className='text-xl font-bold text-white sm:text-2xl'>{title}</h2>
+      <div className='flex items-center justify-between'>
+        <h2 className='text-2xl font-bold text-white sm:text-2xl'>{title}</h2>
         <DialogClose />
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className='space-y-4'>
-          {!isSignIn && (
-            <div className='space-y-2'>
-              <Label htmlFor='name' className='text-white'>
-                Name
-              </Label>
-              <Input
-                id='name'
-                placeholder='Enter your name'
-                className={inputClasses}
-              />
-            </div>
-          )}
-          <div className='space-y-2'>
-            <Label htmlFor='email' className='text-white'>
-              Email
+      <form onSubmit={handleSubmit} className='space-y-3'>
+        {!isSignIn && (
+          <div>
+            <Label htmlFor='name' className='text-sm text-white'>
+              Name
             </Label>
             <Input
-              id='email'
-              type='email'
-              placeholder='Enter your email'
-              className={inputClasses}
+              id='name'
+              placeholder='Enter your name'
+              className={cn(inputClasses, 'mt-1')}
             />
           </div>
-          {!isSignIn && (
-            <>
-              <div className='space-y-2'>
-                <Label htmlFor='country' className='text-white'>
-                  Country
-                </Label>
-                <Select
-                  onValueChange={handleCountryChange}
-                  defaultValue={selectedCountry.code}
-                >
-                  <SelectTrigger className={inputClasses}>
-                    <SelectValue placeholder='Select country' />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {topCountries.map((country) => (
-                      <SelectItem key={country.code} value={country.code}>
-                        {country.name} ({country.phoneCode})
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className='space-y-2'>
-                <Label htmlFor='phone' className='text-white'>
-                  Phone Number
-                </Label>
-                <div className='flex'>
-                  <span
-                    className={cn(
-                      inputClasses,
-                      'flex items-center rounded-r-none border-r-0 px-3'
-                    )}
-                  >
-                    {selectedCountry.phoneCode}
-                  </span>
-                  <Input
-                    id='phone'
-                    type='tel'
-                    value={phoneNumber}
-                    onChange={handlePhoneNumberChange}
-                    placeholder={selectedCountry.template.replace(/#/g, '0')}
-                    className={cn(inputClasses, 'rounded-l-none')}
-                  />
-                </div>
-              </div>
-            </>
-          )}
-          <div className='space-y-2'>
-            <Label htmlFor='password' className='text-white'>
-              Password
-            </Label>
-            <Input
-              id='password'
-              type='password'
-              placeholder={
-                isSignIn ? 'Enter your password' : 'Create a password'
-              }
-              className={inputClasses}
-            />
-          </div>
-          <Button
-            type='submit'
-            className='w-full bg-white text-[#18344a] hover:bg-white/90'
-          >
-            {isSignIn ? 'Sign In' : 'Sign Up'}
-          </Button>
+        )}
+        <div>
+          <Label htmlFor='email' className='text-sm text-white'>
+            Email
+          </Label>
+          <Input
+            id='email'
+            type='email'
+            placeholder='Enter your email'
+            className={cn(inputClasses, 'mt-1')}
+          />
         </div>
+        {!isSignIn && (
+          <>
+            <div>
+              <Label htmlFor='country' className='text-sm text-white'>
+                Country
+              </Label>
+              <Select
+                onValueChange={handleCountryChange}
+                defaultValue={selectedCountry.code}
+              >
+                <SelectTrigger className={cn(inputClasses, 'mt-1')}>
+                  <SelectValue placeholder='Select country' />
+                </SelectTrigger>
+                <SelectContent>
+                  {topCountries.map((country) => (
+                    <SelectItem key={country.code} value={country.code}>
+                      {country.name} ({country.phoneCode})
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label htmlFor='phone' className='text-sm text-white'>
+                Phone Number
+              </Label>
+              <div className='mt-1 flex'>
+                <span
+                  className={cn(
+                    inputClasses,
+                    'flex items-center rounded-r-none border-r-0 px-2 text-sm'
+                  )}
+                >
+                  {selectedCountry.phoneCode}
+                </span>
+                <Input
+                  id='phone'
+                  type='tel'
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+                  placeholder={selectedCountry.template.replace(/#/g, '0')}
+                  className={cn(inputClasses, 'rounded-l-none text-sm')}
+                />
+              </div>
+            </div>
+          </>
+        )}
+        <div>
+          <Label htmlFor='password' className='text-sm text-white'>
+            Password
+          </Label>
+          <Input
+            id='password'
+            type='password'
+            placeholder={
+              isSignIn ? 'Enter your password' : 'Create a password'
+            }
+            className={cn(inputClasses, 'mt-1')}
+          />
+        </div>
+        <Button
+          type='submit'
+          className='mt-2 w-full bg-white text-[#18344a] hover:bg-white/90'
+        >
+          {isSignIn ? 'Sign In' : 'Sign Up'}
+        </Button>
       </form>
-      <div className='mt-6 text-center'>
+      <div className='mt-2 text-center'>
         <Button
           variant='linkHover2'
-          className='p-0 text-blue-400 hover:text-blue-300'
+          className='p-0 text-sm text-blue-400 hover:text-blue-300'
           onClick={switchDialog}
         >
           {isSignIn
@@ -264,8 +262,9 @@ export function AuthDialog({
       <DialogContent
         key={key}
         className={cn(
-          'w-[90%] max-w-[400px] rounded-xl border border-white/30 bg-[#18344a]/60 p-4 shadow-xl backdrop-blur-xl sm:p-6',
-          'transition-all duration-150', // Reduced from 300ms to 150ms
+          'w-[90%] max-w-[400px] rounded-xl border border-white/30 bg-[#18344a]/60 p-6 shadow-xl backdrop-blur-xl sm:p-4',
+          'max-h-[90vh] overflow-y-auto',
+          'transition-all duration-150',
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
           'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',

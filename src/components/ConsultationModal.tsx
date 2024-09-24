@@ -205,7 +205,8 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
         className={cn(
-          'w-[90%] rounded-xl border border-white/30 bg-[#18344a]/60 p-5 shadow-xl backdrop-blur-xl sm:max-w-[450px] sm:p-6',
+          'w-[90%] max-w-[400px] rounded-xl border border-white/30 bg-[#18344a]/60 p-6 shadow-xl backdrop-blur-xl sm:p-4',
+          'max-h-[90vh] overflow-y-auto',
           'transition-all duration-150',
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
@@ -214,46 +215,50 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
           'data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]'
         )}
       >
-        <div className='mb-6 flex items-center justify-between'>
-          <h2 className='text-base font-bold text-white sm:text-lg'>
+        <div className='mb-2 flex items-center justify-between'>
+          <h2 className='text-lg font-bold text-white sm:text-xl'>
             Get A Free Consultation
           </h2>
-          <DialogClose className='inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white/30'>
-            <X className='h-6 w-6' />
+          <DialogClose className='rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground'>
+            <X className='h-4 w-4' />
             <span className='sr-only'>Close</span>
           </DialogClose>
         </div>
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit} className='space-y-6'>
-            <div className='mb-4 text-base font-semibold text-white'>
+          <form onSubmit={handleSubmit} className='space-y-3'>
+            <div className='text-sm font-medium text-white'>
               {steps[currentStep].title}
             </div>
             {steps[currentStep].content}
             <div
-              className={`flex ${currentStep === 0 ? 'justify-center' : 'justify-between'} mt-6`}
+              className={`flex ${
+                currentStep === 0 ? 'justify-center' : 'justify-between'
+              } mt-4`}
             >
               {currentStep > 0 && (
                 <Button
                   type='button'
                   onClick={() => setCurrentStep((prev) => prev - 1)}
                   variant='outline'
-                  className='flex items-center'
+                  className='flex items-center text-sm'
                 >
                   <ChevronLeft className='mr-2 h-4 w-4' /> Previous
                 </Button>
               )}
-              {currentStep < steps.length - 2 ? (
+              {currentStep < steps.length - 1 ? (
                 <Button
                   type='button'
                   onClick={() => setCurrentStep((prev) => prev + 1)}
-                  className={`flex items-center ${currentStep === 0 ? '' : 'ml-auto'}`}
+                  className={`flex items-center text-sm ${
+                    currentStep === 0 ? '' : 'ml-auto'
+                  }`}
                 >
                   Next <ChevronRight className='ml-2 h-4 w-4' />
                 </Button>
               ) : (
                 <Button
                   type='submit'
-                  className={`${currentStep === 0 ? '' : 'ml-auto'}`}
+                  className={`text-sm ${currentStep === 0 ? '' : 'ml-auto'}`}
                 >
                   Submit
                 </Button>
@@ -261,10 +266,10 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
             </div>
           </form>
         ) : (
-          <div className='py-6 text-center'>
-            <div className='mb-4 text-5xl text-green-400'>✓</div>
-            <h3 className='mb-3 text-xl font-bold text-white'>Thank You!</h3>
-            <p className='text-base text-white'>
+          <div className='py-4 text-center'>
+            <div className='mb-3 text-4xl text-green-400'>✓</div>
+            <h3 className='mb-2 text-lg font-bold text-white'>Thank You!</h3>
+            <p className='text-sm text-white'>
               Your request has been successfully submitted. We will get in touch
               with you soon.
             </p>

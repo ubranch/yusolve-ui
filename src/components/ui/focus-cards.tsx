@@ -17,13 +17,24 @@ export const Card = React.memo(
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
   }) => (
     <div
+      role="button"
+      tabIndex={0}
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          setHovered(index);
+        }
+      }}
       className={cn(
         'relative h-80 w-full overflow-hidden transition-all duration-300 ease-out md:h-[28rem]',
         'rounded-[2rem] shadow-md', // Unified roundness
-        hovered !== null && hovered !== index && 'md:scale-[0.98] md:blur-sm'
+        hovered !== null && hovered !== index && 'md:scale-[0.98] md:blur-sm',
+        hovered === index ? 'border-white/30 border-2' : 'border-transparent border-2' // Immediate border color change
       )}
+      style={{
+        transition: 'all 300ms ease-out, border-color 0ms' // Disable transition for border-color
+      }}
     >
       <Image src={card.src} alt={card.title} fill className='object-cover' />
       <Link href={card.href} className='absolute inset-0 flex items-end p-6'>

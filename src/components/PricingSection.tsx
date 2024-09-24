@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { CheckIcon } from '@radix-ui/react-icons';
 import NumberTicker from '@/components/ui/number-ticker';
+import SectionContainer from '@/components/SectionContainer';
 
 const plans = [
   {
@@ -43,17 +44,17 @@ const plans = [
 
 const PricingSection: React.FC = () => {
   return (
-    <section className='relative overflow-hidden bg-[#18344a] py-14'>
+    <section className='relative overflow-hidden bg-[#18344a] py-16'>
       {/* Grid effect background */}
-      <div className='-z-1 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]'></div>
+      <div className='-z-1 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_60%_80%_at_50%_0%,#000_70%,transparent_110%)]'></div>
 
-      <div className='relative mx-auto min-h-screen max-w-screen-xl px-4 text-gray-600 md:px-8'>
-        <div className='relative mx-auto max-w-xl sm:text-center'>
+      <SectionContainer>
+        <div className='relative mx-auto max-w-xl text-center'>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className='font-geist text-3xl font-semibold tracking-tighter text-gray-300 sm:text-5xl'
+            transition={{ duration: 0.2 }}
+            className='text-4xl font-semibold tracking-tighter text-gray-300 sm:text-6xl'
           >
             Price plans
           </motion.h3>
@@ -61,7 +62,7 @@ const PricingSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className='font-geist mt-3 max-w-xl text-2xl font-normal text-white/40'
+            className='mt-3 text-2xl font-normal text-white/40'
           >
             <p>
               We handle all your compliance requirements, allowing you to
@@ -73,20 +74,22 @@ const PricingSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className='mt-16 justify-center gap-6 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3'
+          className='mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3'
         >
           {plans.map((item, idx) => (
             <div
               key={item.name}
               className={cn(
-                'relative mt-6 flex transform-gpu flex-col rounded-xl sm:mt-0',
-                'border border-white/10 bg-white/5 backdrop-blur-md',
+                'relative flex transform-gpu flex-col rounded-xl',
+                'bg-white/5 backdrop-blur-md',
                 'shadow-lg transition-all duration-300',
+                'border border-white/30',
+                item.isMostPop && 'border-2 border-white/50',
                 idx === plans.length - 1 && 'overflow-hidden'
               )}
             >
               {item.isMostPop ? (
-                <span className='absolute -top-5 left-0 right-0 mx-auto w-32 animate-background-shine rounded-full border border-white/40 bg-[#18344a]/90 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(24,52,74,0.3),rgba(255,255,255,0))] px-3 py-2 text-center text-sm font-semibold text-white/90 shadow-md'>
+                <span className='absolute -top-5 left-0 right-0 mx-auto w-32 animate-background-shine rounded-full border-2 border-white/40 bg-[#18344a]/90 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(24,52,74,0.3),rgba(255,255,255,0))] px-3 py-2 text-center text-sm font-semibold text-white/90 shadow-md'>
                   Most popular
                 </span>
               ) : null}
@@ -97,14 +100,19 @@ const PricingSection: React.FC = () => {
                     idx === plans.length - 1 && 'relative z-10'
                   )}
                 >
-                  <span className='font-geist text-3xl font-normal tracking-tight text-blue-300/50'>
+                  <span className='font-geist text-3xl font-black tracking-normal text-blue-300/50'>
                     {item.name}
                   </span>
                   <div className='text-3xl font-semibold text-gray-200'>
-
-                    ${typeof item.price === 'number'
-                      ? <NumberTicker value={item.price} className='text-3xl font-semibold text-gray-200'/>
-                      : item.price}{' '}
+                    {typeof item.price === 'number' ? (
+                      <NumberTicker
+                        value={item.price}
+                        type='currency'
+                        className='text-3xl font-semibold text-gray-200'
+                      />
+                    ) : (
+                      item.price
+                    )}{' '}
                     <span className='text-xl font-normal text-gray-600'>
                       /mo
                     </span>
@@ -141,7 +149,7 @@ const PricingSection: React.FC = () => {
             </div>
           ))}
         </motion.div>
-      </div>
+      </SectionContainer>
     </section>
   );
 };
