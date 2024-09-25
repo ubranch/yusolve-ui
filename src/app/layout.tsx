@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import React from 'react';
+import Footer from '@/components/Footer';
 
 const sfProDisplay = localFont({
   src: [
@@ -36,7 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${sfProDisplay.variable} font-sans`}>{children}</body>
+      <body className={`${sfProDisplay.variable} font-sans flex flex-col min-h-screen`}>
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }

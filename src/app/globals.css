@@ -67,3 +67,20 @@
     @apply bg-background font-sans text-foreground;
   }
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Ensure the body takes up the full viewport height */
+body {
+  min-height: 100vh;
+  overflow-y: auto;
+}

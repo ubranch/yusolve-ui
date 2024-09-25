@@ -73,7 +73,7 @@ const PricingSection: React.FC = () => {
               )}
             >
               {item.isMostPop ? (
-                <span className='absolute -top-5 left-0 right-0 mx-auto w-auto max-w-[200px] animate-shimmer rounded-full border-2 border-white/30 bg-[linear-gradient(110deg,rgba(255,255,255,0.1),45%,rgba(255,255,255,0.3),55%,rgba(255,255,255,0.1))] bg-[length:200%_100%] px-3 py-2 text-center text-sm font-semibold text-white shadow-md backdrop-blur-sm [--shimmer-width:50%]'>
+                <span className='absolute -top-5 left-0 right-0 mx-auto w-auto max-w-[200px] animate-shimmer rounded-full border-2 border-white/30 bg-[linear-gradient(110deg,rgba(255,255,255,0.3),45%,rgba(255,255,255,0.6),55%,rgba(255,255,255,0.3))] bg-[length:200%_100%] px-3 py-2 text-center text-sm font-semibold text-white shadow-md backdrop-blur-3xl [--shimmer-width:50%]'>
                   ✨ Most popular
                 </span>
               ) : null}

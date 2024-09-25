@@ -84,7 +84,7 @@ export default function TestimonialSection() {
     <section
       id='testimonials'
       aria-label='What our customers are saying'
-      className='z-1 bg-page-gradient relative bg-[#18344a] py-20 sm:py-16'
+      className='z-1 relative overflow-hidden bg-[#18344a] py-20 sm:py-16'
     >
       {/* Grid effect background */}
       <div className='-z-1 absolute inset-0 h-[600px] w-full bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] opacity-15 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]'></div>
@@ -119,7 +119,7 @@ export default function TestimonialSection() {
                       <QuoteIcon className='absolute left-6 top-6 fill-white/5' />
                       <blockquote className='relative'>
                         <p className='text-lg tracking-tight text-gray-100'>
-                          {testimonial.content}
+                          {testimonial.content}w
                         </p>
                       </blockquote>
                       <figcaption className='relative mt-6 flex items-center justify-between border-t border-slate-100/10 pt-6'>
