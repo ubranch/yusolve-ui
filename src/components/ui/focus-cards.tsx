@@ -31,7 +31,7 @@ export const Card = React.memo(
         'rounded-[2rem] shadow-md', // Unified roundness
         hovered !== null && hovered !== index && 'md:scale-[0.98] md:blur-sm',
         hovered === index
-          ? 'border-2 border-white/30'
+          ? 'border-2 border-[#1e3344]/40 lg:border-white/30'
           : 'border-2 border-transparent' // Immediate border color change
       )}
       style={{
@@ -43,7 +43,7 @@ export const Card = React.memo(
         <div
           className={cn(
             'w-full transition-opacity duration-300',
-            'opacity-100 md:opacity-0 md:group-hover:opacity-100' // Always visible on mobile, hover effect on larger screens
+            'opacity-100 lg:opacity-0 lg:group-hover:opacity-100' // Always visible on mobile, hover effect on larger screens
           )}
         >
           <h3 className='text-3xl font-semibold text-white drop-shadow-lg sm:text-3xl md:text-4xl'>
