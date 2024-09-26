@@ -33,19 +33,19 @@ export default function Footer() {
                 <h5 className='mb-2 text-2xl font-semibold'>Company</h5>
                 <Link
                   href='/about-us'
-                  className='text-right text-xl text-white/70 transition-colors hover:text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-0'
+                  className='relative text-right text-xl text-white/70 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-300 hover:text-white hover:after:w-0 focus:text-white focus:after:w-0'
                 >
                   About Us
                 </Link>
                 <Link
                   href='/contact-us'
-                  className='text-right text-xl text-white/70 transition-colors hover:text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-0'
+                  className='relative text-right text-xl text-white/70 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-300 hover:text-white hover:after:w-0 focus:text-white focus:after:w-0'
                 >
                   Contact Us
                 </Link>
                 <Link
                   href='/blog'
-                  className='text-right text-xl text-white/70 transition-colors hover:text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-0'
+                  className='relative text-right text-xl text-white/70 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-300 hover:text-white hover:after:w-0 focus:text-white focus:after:w-0'
                 >
                   Blog
                 </Link>
@@ -54,19 +54,19 @@ export default function Footer() {
                 <h5 className='mb-2 text-2xl font-semibold'>Legal</h5>
                 <Link
                   href='/privacy-policy'
-                  className='text-right text-xl text-white/70 transition-colors hover:text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-0'
+                  className='relative text-right text-xl text-white/70 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-300 hover:text-white hover:after:w-0 focus:text-white focus:after:w-0'
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href='/terms-of-service'
-                  className='text-right text-xl text-white/70 transition-colors hover:text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-0'
+                  className='relative text-right text-xl text-white/70 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-300 hover:text-white hover:after:w-0 focus:text-white focus:after:w-0'
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href='/cookie-policy'
-                  className='text-right text-xl text-white/70 transition-colors hover:text-white relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-0'
+                  className='relative text-right text-xl text-white/70 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-300 hover:text-white hover:after:w-0 focus:text-white focus:after:w-0'
                 >
                   Cookie Policy
                 </Link>
@@ -80,25 +80,26 @@ export default function Footer() {
           <div className='flex gap-4'>
             <Link
               href='#'
-              className='rounded-lg border border-white/30 p-3 text-white transition-colors hover:bg-white/10'
+              className='rounded-lg border-2 border-white/30 p-3 text-white shadow-2xl transition-colors hover:bg-white/10'
             >
               <Instagram />
             </Link>
             <Link
               href='#'
-              className='rounded-lg border border-white/30 p-3 text-white transition-colors hover:bg-white/10'
+              className='rounded-lg border-2 border-white/30 p-3 text-white shadow-2xl transition-colors hover:bg-white/10'
             >
               <Twitter />
             </Link>
             <Link
               href='#'
-              className='rounded-lg border border-white/30 p-3 text-white transition-colors hover:bg-white/10'
+              className='rounded-lg border-2 border-white/30 p-3 text-white shadow-2xl transition-colors hover:bg-white/10'
             >
               <Facebook />
             </Link>
           </div>
           <p className='text-xl font-medium text-white/80'>
-            © YUSOLVE. All rights reserved. {new Date().getFullYear()} - present.
+            © YUSOLVE. All rights reserved. {new Date().getFullYear()} -
+            present.
           </p>
         </div>
       </SectionContainer>
