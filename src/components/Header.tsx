@@ -52,7 +52,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className='fixed left-1/2 top-6 z-30 w-full -translate-x-1/2 transform font-sans font-medium'>
+    <header className='fixed left-1/2 top-6 z-50 w-full -translate-x-1/2 transform font-sans font-medium'>
       <SectionContainer>
         <div className='rounded-2xl border border-white/30 bg-white/5 px-4 py-4 shadow-lg backdrop-blur-md transition-all duration-300 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between'>
@@ -138,6 +138,13 @@ const Header: React.FC = () => {
                 className='text-white hover:text-gray-300'
               >
                 <Link href='/blog'>Blog</Link>
+              </Button>
+              <Button
+                variant='linkHover2'
+                asChild
+                className='text-white hover:text-gray-300'
+              >
+                <Link href='/solution-page'>Our Solutions</Link>
               </Button>
             </nav>
 
@@ -262,6 +269,12 @@ const Header: React.FC = () => {
               className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
             >
               Blog
+            </Link>
+            <Link
+              href='/solution-page'
+              className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
+            >
+              Our Solutions
             </Link>
 
             {/* Auth buttons container */}

@@ -37,10 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${sfProDisplay.variable} font-sans flex flex-col min-h-screen`}>
-        <main className="flex-grow">
-          {children}
-        </main>
+      <body
+        className={`${sfProDisplay.variable} flex min-h-screen flex-col font-sans`}
+      >
+        <main className='flex-grow'>{children}</main>
         <Footer />
       </body>
     </html>
