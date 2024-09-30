@@ -4,7 +4,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { CheckIcon } from '@radix-ui/react-icons';
 import NumberTicker from '@/components/ui/number-ticker';
-import SectionContainer from '@/components/SectionContainer';
+import Container from '@/components/ui/container';
 
 const plans = [
   {
@@ -34,7 +34,7 @@ const plans = [
     isMostPop: false,
     features: [
       'All features from Subscription 2',
-      'Additional customized solutions',
+      'Additional customized solution',
       'Dedicated account manager',
       'Priority support',
     ],
@@ -44,10 +44,9 @@ const plans = [
 const PricingSection: React.FC = () => {
   return (
     <section className='relative overflow-hidden bg-[#18344a] py-16'>
-      {/* Grid effect background */}
       <div className='-z-1 absolute inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_60%_80%_at_50%_0%,#000_70%,transparent_110%)]'></div>
 
-      <SectionContainer>
+      <Container>
         <div className='relative mx-auto max-w-xl text-center'>
           <h3 className='text-4xl font-semibold tracking-tighter text-gray-300 sm:text-6xl'>
             Price plans
@@ -135,7 +134,7 @@ const PricingSection: React.FC = () => {
             </div>
           ))}
         </div>
-      </SectionContainer>
+      </Container>
     </section>
   );
 };

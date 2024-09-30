@@ -1,7 +1,7 @@
 'use client';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
-import SectionContainer from '@/components/SectionContainer';
+import Container from '@/components/ui/container';
 import { RadiobuttonIcon } from '@radix-ui/react-icons';
 
 interface TimelineEntry {
@@ -38,7 +38,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className='w-full bg-white font-sans' ref={containerRef}>
-      <SectionContainer>
+      <Container>
         <div ref={ref} className='relative mx-auto pb-20 pt-16 md:pt-0'>
           {data.map((item, index) => (
             <div
@@ -86,7 +86,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             />
           </div>
         </div>
-      </SectionContainer>
+      </Container>
     </div>
   );
 };

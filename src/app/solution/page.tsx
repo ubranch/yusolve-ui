@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import Header from '@/components/Header';
-import SolutionPageHero from '@/components/SolutionPageHero';
+import Header from '@/components/layout/Header';
+import SolutionPageHero from '@/components/solution/Hero';
 import { Timeline } from '@/components/ui/timeline';
-import { ConsultationModalTrigger } from '@/components/ConsultationModalTrigger';
-import SectionContainer from '@/components/SectionContainer';
+import { ConsultationModalTrigger } from '@/components/common/ConsultationModalTrigger';
+import Container from '@/components/ui/container';
 import { LampContainer } from '@/components/ui/lamp';
 import { motion } from 'framer-motion';
 
@@ -15,15 +15,15 @@ const timelineData = [
     content: (
       <p>
         If your truck-trailer-load combination exceeds the federal gross vehicle
-        weight limit of 80,000 lbs., you are officially in the &ldquo;overweight&rdquo;
-        category. Beyond the weight, the load must also be non-divisible, i.e.,
-        you cannot reduce its weight within an eight-hour period without causing
-        damage to it. Our team at YUSOLVE will help you determine if your load
-        falls into the overweight category and also guide you through the permit
-        process, which varies from state to state. We will handle the paperwork
-        with utmost personal attention, coordinate with state agencies, and
-        provide you with pre-approved routes that comply with all legal
-        mandates.
+        weight limit of 80,000 lbs., you are officially in the
+        &ldquo;overweight&rdquo; category. Beyond the weight, the load must also
+        be non-divisible, i.e., you cannot reduce its weight within an
+        eight-hour period without causing damage to it. Our team at YUSOLVE will
+        help you determine if your load falls into the overweight category and
+        also guide you through the permit process, which varies from state to
+        state. We will handle the paperwork with utmost personal attention,
+        coordinate with state agencies, and provide you with pre-approved routes
+        that comply with all legal mandates.
       </p>
     ),
   },
@@ -67,16 +67,16 @@ const timelineData = [
     title: 'Temporary Trip Permits (IRP)',
     content: (
       <p>
-        When your trucks cross state lines, they have to comply with the states&apos;
-        regulations. This is why the International Registration Plan (IRP) was
-        created; it is a pact between the U.S., Canada, and the District of
-        Columbia that lets commercial vehicles use a single license plate to
-        travel through multiple jurisdictions. However, if your truck is not
-        registered under IRP and you need to operate outside your home state,
-        you will need a temporary IRP trip permit for that specific journey. It
-        will allow your vehicle to operate in that jurisdiction for a limited
-        time. The duration of the permit can be anywhere from 72 hours to 10
-        days, depending on the state or province.
+        When your trucks cross state lines, they have to comply with the
+        states&apos; regulations. This is why the International Registration
+        Plan (IRP) was created; it is a pact between the U.S., Canada, and the
+        District of Columbia that lets commercial vehicles use a single license
+        plate to travel through multiple jurisdictions. However, if your truck
+        is not registered under IRP and you need to operate outside your home
+        state, you will need a temporary IRP trip permit for that specific
+        journey. It will allow your vehicle to operate in that jurisdiction for
+        a limited time. The duration of the permit can be anywhere from 72 hours
+        to 10 days, depending on the state or province.
       </p>
     ),
   },
@@ -87,19 +87,19 @@ const timelineData = [
       <p>
         Trucking is not a one-size-fits-all industry, and neither are the
         permits you will need. In California, for example, you need to comply
-        with California&apos;s Biennial Inspection of Terminals (BIT) Program. If you
-        are operating in New York, you will need an H or Z endorsement for
-        hazardous materials. You might need an &ldquo;Overplanting Permit&rdquo; in Florida
-        if you are transporting extra-heavy loads of agricultural products
-        during harvest season. These are not every day permits, but they are
-        important for trucking companies. If you move across state lines, you
-        may also need to register for the Unified Carrier Registration (UCR) – a
-        mandatory annual program for commercial carriers – and pay fees based on
-        your fleet size. Our team is well-versed in the ins and outs of these
-        special trucking permits so you are always in compliance. Whether you
-        are hauling high-risk materials, oversized equipment, or operating in
-        unique conditions, we at YUSOLVE have the expertise to get you the right
-        permit, fast.
+        with California&apos;s Biennial Inspection of Terminals (BIT) Program.
+        If you are operating in New York, you will need an H or Z endorsement
+        for hazardous materials. You might need an &ldquo;Overplanting
+        Permit&rdquo; in Florida if you are transporting extra-heavy loads of
+        agricultural products during harvest season. These are not every day
+        permits, but they are important for trucking companies. If you move
+        across state lines, you may also need to register for the Unified
+        Carrier Registration (UCR) – a mandatory annual program for commercial
+        carriers – and pay fees based on your fleet size. Our team is
+        well-versed in the ins and outs of these special trucking permits so you
+        are always in compliance. Whether you are hauling high-risk materials,
+        oversized equipment, or operating in unique conditions, we at YUSOLVE
+        have the expertise to get you the right permit, fast.
       </p>
     ),
   },
@@ -116,7 +116,7 @@ const timelineData = [
         need. Interstate transportation regulations are always changing, and we
         stay on top of them so you do not have to. Our goal goes beyond
         compliance – we want to optimize your routes and operations for maximum
-        efficiency.Our YUSOLVEHub Client Portal and YUSOLVE2Go Mobile App make
+        efficiency.Our YUSOLVEH and YUSOLVE Mobile App make
         it extremely easy to request permits online. But if you have any
         questions, our experienced agents are here to guide you through the
         process, step-by-step. Once you have made your first order, we save all
@@ -156,7 +156,7 @@ export default function NewPage() {
           </motion.h2>
         </LampContainer>
 
-        <SectionContainer className='relative z-10 pb-20 sm:pb-24 md:pb-28 lg:pb-32'>
+        <Container className='relative z-10 pb-20 sm:pb-24 md:pb-28 lg:pb-32'>
           <div className='-mt-40 w-full text-center sm:-mt-40 md:-mt-60 lg:-mt-64'>
             <p className='mb-8 text-lg text-white/70 sm:text-xl md:text-2xl'>
               Take the first step towards a more efficient and profitable
@@ -164,7 +164,7 @@ export default function NewPage() {
             </p>
             <ConsultationModalTrigger />
           </div>
-        </SectionContainer>
+        </Container>
       </section>
     </main>
   );

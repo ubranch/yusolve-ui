@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { ConsultationModalTrigger } from './ConsultationModalTrigger';
+import { ConsultationModalTrigger } from '@/components/common/ConsultationModalTrigger';
 import { cn } from '@/lib/utils';
 
 interface PageHeroProps {
@@ -9,11 +9,7 @@ interface PageHeroProps {
   className?: string;
 }
 
-const SolutionPageHero: React.FC<PageHeroProps> = ({
-  title,
-  description,
-  className,
-}) => {
+const Hero: React.FC<PageHeroProps> = ({ title, description, className }) => {
   return (
     <div className={cn('relative h-[70vh] w-full overflow-hidden', className)}>
       {/* Background container */}
@@ -26,10 +22,10 @@ const SolutionPageHero: React.FC<PageHeroProps> = ({
           <Image
             src='/images/solutions/service-permits.jpg'
             alt='Trucking Permits Banner'
-            layout='fill'
-            objectFit='cover'
+            className='object-cover'
             quality={100}
             priority
+            fill
           />
         </div>
       </div>
@@ -52,4 +48,4 @@ const SolutionPageHero: React.FC<PageHeroProps> = ({
   );
 };
 
-export default SolutionPageHero;
+export default Hero;

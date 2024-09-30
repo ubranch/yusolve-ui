@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import SectionContainer from '@/components/SectionContainer';
+import Container from '@/components/ui/container';
 
 import { Twitter, Facebook, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className='bg-[#18344a] py-12 text-white sm:py-16 md:py-20'>
-      <SectionContainer>
+      <Container>
         <div className='flex flex-col justify-between space-y-10 md:flex-row md:space-y-0'>
           <div className='flex flex-col space-y-6 md:w-1/2 lg:pr-12'>
             <Link href='/'>
@@ -76,8 +76,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </SectionContainer>
-      <SectionContainer className='mt-10 border-t border-white/20 pt-8 sm:mt-12 md:mt-16'>
+      </Container>
+      <Container className='mt-10 border-t border-white/20 pt-8 sm:mt-12 md:mt-16'>
         <div className='flex flex-col items-center justify-between space-y-6 sm:flex-row sm:space-y-0'>
           <div className='flex space-x-4'>
             <Link
@@ -104,7 +104,7 @@ export default function Footer() {
             present.
           </p>
         </div>
-      </SectionContainer>
+      </Container>
     </footer>
   );
 }

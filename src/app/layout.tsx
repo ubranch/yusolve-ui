@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
+import './styles/globals.css';
 import React from 'react';
-import Footer from '@/components/Footer';
+import Footer from '@/components/layout/Footer';
 
 const sfProDisplay = localFont({
   src: [

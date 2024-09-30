@@ -1,4 +1,4 @@
-import { ConsultationModalTrigger } from './ConsultationModalTrigger';
+import { ConsultationModalTrigger } from '@/components/common/ConsultationModalTrigger';
 
 export default function Hero() {
   return (

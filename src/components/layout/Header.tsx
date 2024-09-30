@@ -11,9 +11,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import { AuthDialog } from '@/components/AuthDialog';
+import { AuthDialog } from '@/components/common/AuthDialog';
 import { Button } from '@/components/ui/button';
-import SectionContainer from '@/components/SectionContainer';
+import Container from '@/components/ui/container';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
 
   return (
     <header className='fixed left-1/2 top-6 z-50 w-full -translate-x-1/2 transform font-sans font-medium'>
-      <SectionContainer>
+      <Container>
         <div className='rounded-2xl border border-white/30 bg-white/5 px-4 py-4 shadow-lg backdrop-blur-md transition-all duration-300 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between'>
             {/* Logo */}
@@ -144,7 +144,7 @@ const Header: React.FC = () => {
                 asChild
                 className='text-white hover:text-gray-300'
               >
-                <Link href='/solution-page'>Our Solutions</Link>
+                <Link href='/solution'>Our Solutions</Link>
               </Button>
             </nav>
 
@@ -199,10 +199,10 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-      </SectionContainer>
+      </Container>
 
       {/* Mobile menu */}
-      <SectionContainer className='lg:hidden'>
+      <Container className='lg:hidden'>
         <div
           ref={mobileMenuRef}
           className={cn(
@@ -292,7 +292,7 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-      </SectionContainer>
+      </Container>
     </header>
   );
 };
