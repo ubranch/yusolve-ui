@@ -132,20 +132,6 @@ const Header: React.FC = () => {
               >
                 <Link href='/contact-us'>Contact Us</Link>
               </Button>
-              <Button
-                variant='linkHover2'
-                asChild
-                className='text-white hover:text-gray-300'
-              >
-                <Link href='/blog'>Blog</Link>
-              </Button>
-              <Button
-                variant='linkHover2'
-                asChild
-                className='text-white hover:text-gray-300'
-              >
-                <Link href='/solution'>Our Solutions</Link>
-              </Button>
             </nav>
 
             {/* Sign In Button for desktop */}
@@ -264,21 +250,9 @@ const Header: React.FC = () => {
             >
               Contact Us
             </Link>
-            <Link
-              href='/blog'
-              className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
-            >
-              Blog
-            </Link>
-            <Link
-              href='/solution-page'
-              className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
-            >
-              Our Solutions
-            </Link>
 
             {/* Auth buttons container */}
-            <div className='mt-4 flex items-center justify-around px-3 py-2'>
+            <div className='mt-4 flex items-center justify-around px-2 py-2'>
               <AuthDialog
                 isScrolled={false}
                 buttonType='signin'

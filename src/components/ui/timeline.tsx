@@ -46,7 +46,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               className={`${index === 0 ? 'md:pt-40' : 'pt-20 md:pt-40'}`}
             >
               <div className='sticky top-32 z-40 inline-block rounded-2xl border border-[#18344a]/20 bg-white/5 py-2 pl-3 pr-4 shadow-lg backdrop-blur-md transition-all duration-300 md:top-40'>
-                <div className='flex items-center'>
+                <div className='flex items-center' tabIndex={0}>
                   <RadiobuttonIcon className='h-10 w-10 text-[#18344a]' />
                   <h3 className='ml-4 text-xl font-bold text-[#18344a] md:text-xl lg:text-2xl'>
                     {item.title}

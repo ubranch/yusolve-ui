@@ -11,6 +11,9 @@
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-react": "^2.3.0",
+    "@flaticon/flaticon-uicons": "^3.3.1",
     "@heroicons/react": "^2.1.5",
     "@kinfe123/farm-ui": "^1.0.12",
     "@plaiceholder/next": "^3.0.0",
