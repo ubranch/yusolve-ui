@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import SectionContainer from '@/components/SectionContainer';
+import Container from '@/components/ui/container';
 
 const testimonials = [
   [
@@ -86,11 +86,10 @@ export default function TestimonialSection() {
       aria-label='What our customers are saying'
       className='z-1 relative overflow-hidden bg-[#18344a] py-20 sm:py-16'
     >
-      {/* Grid effect background */}
       <div className='-z-1 absolute inset-0 h-[600px] w-full bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]'></div>
 
       <div className='absolute inset-x-0 -top-10 z-10 m-auto h-[27rem] max-w-lg opacity-50 sm:h-64 sm:max-w-7xl'></div>
-      <SectionContainer>
+      <Container>
         <div className='mx-auto max-w-2xl md:text-center'>
           <h2 className='font-geist text-5xl font-bold tracking-tighter text-gray-100 sm:text-6xl'>
             <span className='bg-gradient-to-br from-[#4975b1] via-[#28557b] to-[#68a7fd] bg-clip-text text-transparent'>
@@ -146,7 +145,7 @@ export default function TestimonialSection() {
             </li>
           ))}
         </ul>
-      </SectionContainer>
+      </Container>
     </section>
   );
 }

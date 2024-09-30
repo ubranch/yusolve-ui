@@ -28,11 +28,11 @@ export const Card = React.memo(
       }}
       className={cn(
         'relative h-80 w-full overflow-hidden transition-all duration-300 ease-out md:h-[28rem]',
-        'rounded-[2rem] shadow-md', // Unified roundness
+        'rounded-[2rem] shadow-md',
         hovered !== null && hovered !== index && 'md:scale-[0.98] md:blur-sm',
         hovered === index
           ? 'border-2 border-[#1e3344]/40 lg:border-white/30'
-          : 'border-2 border-transparent' // Immediate border color change
+          : 'border-2 border-transparent'
       )}
       style={{
         transition: 'all 300ms ease-out, border-color 0ms', // Disable transition for border-color

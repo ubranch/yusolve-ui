@@ -1,4 +1,4 @@
-import { ConsultationModalTrigger } from './ConsultationModalTrigger';
+import { ConsultationModalTrigger } from '@/components/common/ConsultationModalTrigger';
 
 export default function Hero() {
   return (
@@ -26,7 +26,7 @@ export default function Hero() {
           <h2 className='mx-2 mb-3 text-4xl font-bold text-white/70 md:text-5xl lg:text-6xl'>
             You Keep Our Nation Running
           </h2>
-          <p className='mx-4 mb-5 max-w-xl text-white text-white/40 md:text-lg lg:text-xl'>
+          <p className='mx-4 mb-5 max-w-md text-lg text-white/40 md:text-lg lg:text-2xl'>
             Encouraging and supporting transportation entrepreneurs, just like
             you for over 20 years!
           </p>

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import ConsultationModal from '@/components/ConsultationModal';
+import ConsultationModal from '@/components/common/ConsultationModal';
 
 export function ConsultationModalTrigger() {
   const [isModalOpen, setIsModalOpen] = useState(false);

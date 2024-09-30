@@ -11,9 +11,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import { AuthDialog } from '@/components/AuthDialog';
+import { AuthDialog } from '@/components/common/AuthDialog';
 import { Button } from '@/components/ui/button';
-import SectionContainer from '@/components/SectionContainer';
+import Container from '@/components/ui/container';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,8 +52,8 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className='fixed left-1/2 top-6 z-30 w-full -translate-x-1/2 transform font-sans font-medium'>
-      <SectionContainer>
+    <header className='fixed left-1/2 top-6 z-50 w-full -translate-x-1/2 transform font-sans font-medium'>
+      <Container>
         <div className='rounded-2xl border border-white/30 bg-white/5 px-4 py-4 shadow-lg backdrop-blur-md transition-all duration-300 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between'>
             {/* Logo */}
@@ -132,13 +132,6 @@ const Header: React.FC = () => {
               >
                 <Link href='/contact-us'>Contact Us</Link>
               </Button>
-              <Button
-                variant='linkHover2'
-                asChild
-                className='text-white hover:text-gray-300'
-              >
-                <Link href='/blog'>Blog</Link>
-              </Button>
             </nav>
 
             {/* Sign In Button for desktop */}
@@ -192,10 +185,10 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-      </SectionContainer>
+      </Container>
 
       {/* Mobile menu */}
-      <SectionContainer className='lg:hidden'>
+      <Container className='lg:hidden'>
         <div
           ref={mobileMenuRef}
           className={cn(
@@ -257,15 +250,9 @@ const Header: React.FC = () => {
             >
               Contact Us
             </Link>
-            <Link
-              href='/blog'
-              className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
-            >
-              Blog
-            </Link>
 
             {/* Auth buttons container */}
-            <div className='mt-4 flex items-center justify-around px-3 py-2'>
+            <div className='mt-4 flex items-center justify-around px-2 py-2'>
               <AuthDialog
                 isScrolled={false}
                 buttonType='signin'
@@ -279,7 +266,7 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-      </SectionContainer>
+      </Container>
     </header>
   );
 };
