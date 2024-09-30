@@ -123,14 +123,14 @@ const Header: React.FC = () => {
                 asChild
                 className='text-white hover:text-gray-300'
               >
-                <Link href='/about-us'>About Us</Link>
+                <Link href='/#about-us'>About Us</Link>
               </Button>
               <Button
                 variant='linkHover2'
                 asChild
                 className='text-white hover:text-gray-300'
               >
-                <Link href='/contact-us'>Contact Us</Link>
+                <Link href='#footer'>Contact Us</Link>
               </Button>
             </nav>
 

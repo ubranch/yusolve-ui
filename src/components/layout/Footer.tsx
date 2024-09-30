@@ -7,7 +7,10 @@ import { Facebook, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className='bg-[#18344a] py-12 text-white sm:py-16 md:py-20'>
+    <footer
+      className='bg-[#18344a] py-12 text-white sm:py-16 md:py-20'
+      id='footer'
+    >
       <Container>
         <div className='flex flex-col justify-between space-y-10 md:flex-row md:space-y-0'>
           <div className='flex flex-col space-y-6 md:w-1/2 lg:pr-12'>

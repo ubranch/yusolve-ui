@@ -9,7 +9,7 @@ import Container from '@/components/ui/container';
 const AboutSection: React.FC = () => {
   return (
     <section
-      id='two-col-section'
+      id='about-us'
       className='relative bg-[#18344a] py-20 lg:bg-white lg:py-28'
     >
       <div className='z-100 absolute inset-0 h-full w-full bg-[#1e3344]/30 bg-[linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 backdrop-blur-[1px] [mask-image:radial-gradient(ellipse_55%_95%_at_30%_10%,#000_70%,transparent_100%)] lg:bg-[linear-gradient(to_right,#18344a_1px,transparent_1px),linear-gradient(to_bottom,#18344a_1px,transparent_1px)]'></div>{' '}
