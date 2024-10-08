@@ -92,27 +92,27 @@ const Header: React.FC = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className='rounded-md border border-white/30 bg-[#18344a]/70 backdrop-blur-lg'>
                   <DropdownMenuItem className='text-base text-white hover:bg-white/30'>
-                    <Link href='/safety-compliance' className='w-full'>
+                    <Link href='/solution' className='w-full'>
                       Safety Compliance
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className='text-base text-white hover:bg-white/30'>
-                    <Link href='/trucking-factoring' className='w-full'>
+                    <Link href='/solution' className='w-full'>
                       Trucking Factoring
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className='text-base text-white hover:bg-white/30'>
-                    <Link href='/administrative' className='w-full'>
+                    <Link href='/solution' className='w-full'>
                       Administrative
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className='text-base text-white hover:bg-white/30'>
-                    <Link href='/trucking-insurance' className='w-full'>
+                    <Link href='/solution' className='w-full'>
                       Trucking Insurance
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className='text-base text-white hover:bg-white/30'>
-                    <Link href='/freight-planning' className='w-full'>
+                    <Link href='/solution' className='w-full'>
                       Freight Planning
                     </Link>
                   </DropdownMenuItem>
@@ -212,27 +212,27 @@ const Header: React.FC = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className='w-full rounded-md border border-white/20 bg-[#18344a]/90 backdrop-blur-lg'>
                 <DropdownMenuItem className='text-sm text-white hover:bg-white/30'>
-                  <Link href='/safety-compliance' className='w-full'>
+                  <Link href='/solution' className='w-full'>
                     Safety Compliance
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className='text-sm text-white hover:bg-white/30'>
-                  <Link href='/trucking-factoring' className='w-full'>
+                  <Link href='/solution' className='w-full'>
                     Trucking Factoring
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className='text-sm text-white hover:bg-white/30'>
-                  <Link href='/administrative' className='w-full'>
+                  <Link href='/solution' className='w-full'>
                     Administrative
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className='text-sm text-white hover:bg-white/30'>
-                  <Link href='/trucking-insurance' className='w-full'>
+                  <Link href='/solution' className='w-full'>
                     Trucking Insurance
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className='text-sm text-white hover:bg-white/30'>
-                  <Link href='/freight-planning' className='w-full'>
+                  <Link href='/solution' className='w-full'>
                     Freight Planning
                   </Link>
                 </DropdownMenuItem>
