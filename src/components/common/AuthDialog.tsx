@@ -55,7 +55,6 @@ const topCountries = [
 ];
 
 export function AuthDialog({
-  isScrolled,
   buttonType,
   className,
 }: Readonly<AuthDialogProps>) {
