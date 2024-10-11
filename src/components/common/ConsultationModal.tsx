@@ -8,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Textarea } from '@/components/ui/textarea';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -47,9 +48,23 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
+    // TODO: Implement actual form submission logic
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
+
+    toast.success('Consultation request submitted successfully!', {
+      style: {
+        backgroundColor: 'rgba(24, 52, 74, 0.6)',
+        color: 'white',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid rgba(255, 255, 255, 0.3)',
+      },
+    });
+
+    setTimeout(() => {
+      onClose();
+      setIsSubmitted(false);
+    }, 2000);
   };
 
   const inputClasses =

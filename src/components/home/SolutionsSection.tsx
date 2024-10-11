@@ -10,32 +10,32 @@ const SolutionsSection: React.FC = () => {
     {
       title: 'DOT Safety Compliance',
       src: '/images/solutions/service-DOT.jpg',
-      href: '/dot-safety-compliance/',
+      href: '/solution',
     },
     {
       title: 'Permits & Tax Services',
       src: '/images/solutions/service-permits.jpg',
-      href: '/permits/',
+      href: '/solution',
     },
     {
       title: 'Freight Planning',
       src: '/images/solutions/service-freight-planning.jpg',
-      href: '/freight-planning/',
+      href: '/solution',
     },
     {
       title: 'Factoring',
       src: '/images/solutions/service-factoring.jpg',
-      href: '/factoring/',
+      href: '/solution',
     },
     {
       title: 'Insurance',
       src: '/images/solutions/service-insurance.jpg',
-      href: '/insurance-coverage/',
+      href: '/solution',
     },
     {
       title: 'ELD',
       src: '/images/solutions/service-eld.jpg',
-      href: '/eld-system/',
+      href: '/solution',
     },
   ];
 
