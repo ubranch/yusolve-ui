@@ -28,14 +28,14 @@ export const Card = React.memo(
       }}
       className={cn(
         'relative h-80 w-full overflow-hidden transition-all duration-300 ease-out md:h-[28rem]',
-        'rounded-[2rem] shadow-md',
+        'rounded-[1rem] shadow-md border-2 ',
         hovered !== null && hovered !== index && 'md:scale-[0.98] md:blur-sm',
         hovered === index
-          ? 'border-2 border-[#1e3344]/40 lg:border-white/30'
-          : 'border-2 border-transparent'
+          ? 'border-[#1e3344]/50'
+          : 'border-[#1e3344]/20'
       )}
       style={{
-        transition: 'all 300ms ease-out, border-color 0ms', // Disable transition for border-color
+        transition: 'all 300ms ease-out, border-color 500ms'
       }}
     >
       <Image src={card.src} alt={card.title} fill className='object-cover' />
@@ -43,7 +43,7 @@ export const Card = React.memo(
         <div
           className={cn(
             'w-full transition-opacity duration-300',
-            'opacity-100 lg:opacity-0 lg:group-hover:opacity-100' // Always visible on mobile, hover effect on larger screens
+            'opacity-100 lg:group-hover:opacity-100'
           )}
         >
           <h3 className='text-3xl font-semibold text-white drop-shadow-lg sm:text-3xl md:text-4xl'>

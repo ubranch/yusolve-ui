@@ -112,7 +112,7 @@ export default function TestimonialSection() {
               <ul role='list' className='flex flex-col gap-y-6 sm:gap-y-8'>
                 {column.map((testimonial, testimonialIndex) => (
                   <li key={testimonialIndex}>
-                    <figure className='relative transform-gpu rounded-2xl border border-white/30 bg-white/5 p-6 shadow-xl backdrop-blur-md [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]'>
+                    <figure className='relative transform-gpu rounded-[1rem] border border-white/30 bg-white/5 p-6 shadow-xl backdrop-blur-md [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]'>
                       <QuoteIcon className='absolute left-6 top-6 fill-white/5' />
                       <blockquote className='relative'>
                         <p className='text-lg tracking-tight text-gray-100'>

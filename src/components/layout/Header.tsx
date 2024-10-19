@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Link as ScrollLink } from 'react-scroll';
 import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
@@ -14,13 +15,26 @@ import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { AuthDialog } from '@/components/common/AuthDialog';
 import { Button } from '@/components/ui/button';
 import Container from '@/components/ui/container';
+import { useCurrentRoute } from '@/hooks/useCurrentRoute';
 
 const Header: React.FC = () => {
+  const currentRoute = useCurrentRoute();
+  const isHomePage = currentRoute === '/';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [isDesktopSolutionsOpen, setIsDesktopSolutionsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -54,7 +68,12 @@ const Header: React.FC = () => {
   return (
     <header className='fixed left-1/2 top-6 z-50 w-full -translate-x-1/2 transform font-sans font-medium'>
       <Container>
-        <div className='rounded-2xl border border-white/30 bg-white/5 px-4 py-4 shadow-lg backdrop-blur-md transition-all duration-300 sm:px-6 lg:px-8'>
+        <div className={cn(
+          'rounded-2xl border px-4 py-4 shadow-lg transition-all duration-300 sm:px-6 lg:px-8',
+          isScrolled
+            ? 'border-white/30 border backdrop-blur-lg bg-[#18344a]/60 text-white shadow-lg shadow-[#18344a]/40 transition-all duration-300 ease-in-out'
+            : 'border-white/30 bg-white/5 backdrop-blur-md'
+        )}>
           <div className='flex items-center justify-between'>
             {/* Logo */}
             <div className='flex-shrink-0'>
@@ -75,6 +94,23 @@ const Header: React.FC = () => {
 
             {/* Desktop menu */}
             <nav className='hidden space-x-8 lg:flex'>
+            {isHomePage && (
+                <Button
+                  variant='linkHover2'
+                  asChild
+                  className='text-white hover:text-gray-300'
+                >
+                  <ScrollLink
+                    to='services-section'
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className='cursor-pointer'
+                  >
+                    Our Solutions
+                  </ScrollLink>
+                </Button>
+              )}
               <DropdownMenu onOpenChange={setIsDesktopSolutionsOpen}>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -118,19 +154,53 @@ const Header: React.FC = () => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+              {isHomePage && (
+                <>
+                  <Button
+                    variant='linkHover2'
+                    asChild
+                    className='text-white hover:text-gray-300'
+                  >
+                    <ScrollLink
+                      to='pricing'
+                      smooth={true}
+                      duration={500}
+                      offset={-100}
+                      className='cursor-pointer'
+                    >
+                      Pricing
+                    </ScrollLink>
+                  </Button>
+                  <Button
+                    variant='linkHover2'
+                    asChild
+                    className='text-white hover:text-gray-300'
+                  >
+                    <ScrollLink
+                      to='testimonials'
+                      smooth={true}
+                      duration={500}
+                      offset={-100}
+                      className='cursor-pointer'
+                    >
+                      Testimonials
+                    </ScrollLink>
+                  </Button>
+                </>
+              )}
               <Button
                 variant='linkHover2'
                 asChild
                 className='text-white hover:text-gray-300'
               >
-                <Link href='/#about-us'>About Us</Link>
-              </Button>
-              <Button
-                variant='linkHover2'
-                asChild
-                className='text-white hover:text-gray-300'
-              >
-                <Link href='#footer'>Contact Us</Link>
+                <ScrollLink
+                  to='footer'
+                  smooth={true}
+                  duration={500}
+                  className='cursor-pointer'
+                >
+                  Contact Us
+                </ScrollLink>
               </Button>
             </nav>
 
@@ -192,11 +262,14 @@ const Header: React.FC = () => {
         <div
           ref={mobileMenuRef}
           className={cn(
-            'mt-2 rounded-xl border border-white/10 bg-[#18344a]/70 shadow-lg backdrop-blur-lg',
+            'mt-2 rounded-xl border shadow-lg backdrop-blur-lg',
             'origin-top transition-all duration-300 ease-in-out',
             isMenuOpen
               ? 'translate-y-0 scale-y-100 opacity-100'
-              : 'pointer-events-none -translate-y-2 scale-y-95 opacity-0'
+              : 'pointer-events-none -translate-y-2 scale-y-95 opacity-0',
+            isScrolled
+              ? 'border-white/30 bg-[#18344a]/70'
+              : 'border-white/30 backdrop-blur-lg'
           )}
         >
           <div className='space-y-1 px-2 pb-3 pt-2'>
@@ -238,14 +311,32 @@ const Header: React.FC = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            {isHomePage && (
+              <Link
+                href='#services-section'
+                className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
+              >
+                Our Solutions
+              </Link>
+            )}
+            {isHomePage && (
+              <>
+                <Link
+                  href='#testimonials'
+                  className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
+                >
+                  Testimonials
+                </Link>
+                <Link
+                  href='#pricing'
+                  className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
+                >
+                  Pricing
+                </Link>
+              </>
+            )}
             <Link
-              href='/about-us'
-              className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
-            >
-              About Us
-            </Link>
-            <Link
-              href='/contact-us'
+              href='#footer'
               className='block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/30'
             >
               Contact Us
