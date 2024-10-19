@@ -8,10 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/PricingSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/PricingSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/SolutionsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/SolutionsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/TestimonialSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/TestimonialSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/solution/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/solution/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/focus-cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/focus-cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/lamp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/lamp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +135,11 @@
       <workItem from="1727694606197" duration="5597000" />
       <workItem from="1727726357477" duration="23000" />
       <workItem from="1727726435094" duration="1441000" />
+      <workItem from="1727737831457" duration="426000" />
+      <workItem from="1728669990340" duration="6163000" />
+      <workItem from="1728744746398" duration="4153000" />
+      <workItem from="1729294627686" duration="1154000" />
+      <workItem from="1729340043737" duration="6343000" />
     </task>
     <servers />
   </component>

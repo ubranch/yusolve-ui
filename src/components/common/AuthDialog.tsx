@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/select';
 import { PersonIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
 interface AuthDialogProps {
   isScrolled: boolean;
@@ -54,7 +55,6 @@ const topCountries = [
 ];
 
 export function AuthDialog({
-  isScrolled,
   buttonType,
   className,
 }: Readonly<AuthDialogProps>) {
@@ -120,8 +120,19 @@ export function AuthDialog({
       alert('Please enter a valid phone number');
       return;
     }
-    // TODO: Implement form submission logic
+    // TODO: Implement actual form submission logic
     console.log('Form submitted', { country: selectedCountry, phoneNumber });
+
+    toast.success(`${activeDialog === 'signin' ? 'Signed in' : 'Signed up'} successfully!`, {
+      style: {
+        backgroundColor: 'rgba(24, 52, 74, 0.6)',
+        color: 'white',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid rgba(255, 255, 255, 0.3)',
+      },
+    });
+
+    setIsOpen(false);
   };
 
   const inputClasses =
@@ -217,7 +228,10 @@ export function AuthDialog({
         </div>
         <Button
           type='submit'
-          className='mt-2 w-full bg-white text-[#18344a] hover:bg-white/90'
+          className={cn(
+            'mt-2 w-full',
+            buttonClasses
+          )}
         >
           {isSignIn ? 'Sign In' : 'Sign Up'}
         </Button>
@@ -225,7 +239,7 @@ export function AuthDialog({
       <div className='mt-2 text-center'>
         <Button
           variant='linkHover2'
-          className='p-0 text-sm text-blue-400 hover:text-blue-300'
+          className='p-0 text-sm text-white hover:text-white/80'
           onClick={switchDialog}
         >
           {isSignIn
@@ -238,17 +252,20 @@ export function AuthDialog({
 
   const buttonText = buttonType === 'signin' ? 'Sign In' : 'Sign Up';
 
+  const buttonClasses = `
+    border border-white/30
+    bg-[#18344a]/60 text-white
+    shadow-lg
+    hover:bg-white/10 hover:backdrop-blur-md
+    transition-all duration-300 ease-in-out
+  `;
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button
-          variant={isScrolled ? 'default' : 'outline'}
-          size='default'
           className={cn(
-            'shadow-lg transition duration-300',
-            isScrolled
-              ? 'bg-[#18344a] text-white hover:bg-[#224b6b]'
-              : 'border-white/30 text-white hover:bg-white/20',
+            buttonClasses,
             className
           )}
           onClick={openDialog}

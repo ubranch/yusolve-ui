@@ -10,43 +10,43 @@ const SolutionsSection: React.FC = () => {
     {
       title: 'DOT Safety Compliance',
       src: '/images/solutions/service-DOT.jpg',
-      href: '/dot-safety-compliance/',
+      href: '/solution',
     },
     {
       title: 'Permits & Tax Services',
       src: '/images/solutions/service-permits.jpg',
-      href: '/permits/',
+      href: '/solution',
     },
     {
       title: 'Freight Planning',
       src: '/images/solutions/service-freight-planning.jpg',
-      href: '/freight-planning/',
+      href: '/solution',
     },
     {
       title: 'Factoring',
       src: '/images/solutions/service-factoring.jpg',
-      href: '/factoring/',
+      href: '/solution',
     },
     {
       title: 'Insurance',
       src: '/images/solutions/service-insurance.jpg',
-      href: '/insurance-coverage/',
+      href: '/solution',
     },
     {
       title: 'ELD',
       src: '/images/solutions/service-eld.jpg',
-      href: '/eld-system/',
+      href: '/solution',
     },
   ];
 
   return (
     <section
       id='services-section'
-      className='relative bg-white lg:bg-[#18344a]'
+      className='relative bg-white'
     >
       <LampContainer
         className='md:pt-30 pb-20 pt-40 sm:pb-32 sm:pt-44 md:pb-40 lg:pb-52 lg:pt-52'
-        bgColor='bg-white lg:bg-[#18344a]'
+        bgColor='bg-white'
       >
         <motion.h2
           initial={{ opacity: 0, y: 100 }}
@@ -56,7 +56,7 @@ const SolutionsSection: React.FC = () => {
             duration: 0.6,
             ease: 'easeInOut',
           }}
-          className='mx-auto mt-0 max-w-[90%] bg-gradient-to-br from-[#18344a] to-cyan-600 bg-clip-text pb-4 text-center text-5xl font-bold tracking-tight text-transparent opacity-50 sm:text-6xl md:text-6xl lg:from-slate-100 lg:to-cyan-600 lg:text-7xl'
+          className='mx-auto mt-0 max-w-[90%] bg-gradient-to-br from-[#18344a] to-cyan-600 bg-clip-text pb-4 text-center text-5xl font-bold tracking-tight text-transparent opacity-50 sm:text-6xl md:text-6xl lg:text-7xl'
         >
           Our Solutions
         </motion.h2>
